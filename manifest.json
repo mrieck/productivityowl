@@ -1,0 +1,65 @@
+{
+  "manifest_version": 2,
+  "name": "Productivity Owl",
+  "version": "2.0",
+  "description": "Want to be productive? Let the Productivity Owl guide you to accomplishment.",
+  "icons": { "16": "img/owl_16x16.png",
+           "48": "img/owl_48x48.png",
+          "128": "img/owl_128x128.png"
+  },  
+  "browser_action": {
+    "default_icon": "img/advice_owl_small.png",
+    "default_popup": "popup.html",
+	"default_title": "Productivity Owl"
+  },
+  "background": {
+    "scripts": ["jslib/jquery-3.3.1.min.js", "jslib/date.js", "jslib/time.js", "js/options/respect.js", "productivityowl.js"]
+  },
+  "options_page": "options.html",
+  "permissions": [
+    "http://fonts.googleapis.com/",
+    "https://fonts.googleapis.com/",             
+    "tabs",
+    "history",
+    "unlimitedStorage",
+	"alarms"
+  ],
+  "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'",  
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+ 	  "css": [
+	    "css/block_styles.css",
+		"jslib/jquery.qtip.css",
+        "css/interventions.css",
+        "css/micromodal.css",
+        "css/tasks.css"
+	  ],
+      "js": [
+	  	"jslib/jquery-3.3.1.min.js",	
+        "jslib/uri.all.min.js",		
+		"jslib/jquery.qtip.js",  
+        "jslib/micromodal.min.js",  
+        "jslib/plain-draggable.js",
+        "jslib/editable.table.js",
+		"js/options/owl_sayings.js",	
+        "js/options/task_list.js",    	
+        "js/options/interventions.js",                
+	    "js/block_logic.js",
+		"js/yahoo-dom-event.js",		
+		"js/yahoo-dragdrop-min.js",		
+		"js/mustache.js",
+	    "contentscript_owl.js"
+	  ]
+    }
+  ],
+  "web_accessible_resources": [
+    "templates/*",
+    "sound/*",
+    "css/*",
+    "js/*",
+    "jslib/*",
+    "site/*",
+    "img/*"	
+  ]
+}
