@@ -1,0 +1,498 @@
+/*************** TASK LIST & Rewards, ALSO USED IN CONTENTSCRIPT *********************/
+
+#prodowl-tasks_rewards .addnewtask_container{
+    display:flex;
+    align-items: center;
+    width: 1040px;
+}
+
+#prodowl-tasks_rewards .tasks-rewards-top{
+    display: flex;
+    max-width: 1100px;
+    width: 80%;    
+}
+
+#prodowl-tasks_rewards .task_options_container{
+    margin-left:auto;
+    text-align:right;
+}
+
+#prodowl-tasks_rewards .addnewtask_container button{
+    margin-left: 20px;
+}
+#prodowl-tasks_rewards .default_freetime_earned{
+    padding: 20px 0px;
+}
+
+
+
+#prodowl-tasks_rewards .freetime_earned_default{
+    padding: 3px;
+}
+
+#prodowl-tasks_rewards #tasklist{
+    margin-left:0px;
+    list-style-type: none; 
+    max-width: 1100px;
+    width:80%;
+    margin-top: 20px;
+}
+
+#prodowl-tasks_rewards .subtask_list{
+    display: block !important;
+    margin-left: 0px !important;
+    list-style-type: none !important;
+    max-width: 1000px !important;
+    width: calc(100% - 20px) !important;
+    padding-left: 0px !important;    
+    margin-top: 2px !important;
+    margin-left: 20px !important;
+    margin-right: 6px !important;
+}
+
+#prodowl-tasks_rewards .subtask_list .subtask_container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;        
+}
+
+
+#prodowl-tasks_rewards #tasklist .prodowl-list-group-item{
+    list-style: none !important;
+    padding: 0px !important;
+    margin: 0px !important;
+}
+
+
+#prodowl-tasks_rewards .subtask-checkbox-wrap{
+    cursor: pointer;
+    font-weight: 400;
+    padding: 0;
+    position: relative;
+    display: block;
+    font-size: 12px;
+    width: 90%;   
+}
+
+#prodowl-tasks_rewards .subtask_text_label{
+    cursor: pointer;
+    font-weight: 400;
+    padding: 0;
+    position: relative;
+    display: block;
+    font-size: 12px;        
+    margin-top: 10px;
+}
+
+#prodowl-tasks_rewards .subtask_delete{
+    margin-right: 16px;
+}
+
+#prodowl-tasks_rewards #tasklist > li:first-child {
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+}
+#prodowl-tasks_rewards #tasklist > li .task_drag_container{
+    width: 20px;
+    cursor: ns-resize;    
+    position:relative;
+}
+
+#prodowl-tasks_rewards #tasklist > li .task_subtaskadd_container{
+    width: 100%;
+    position:relative;
+    z-index: 9999;
+}
+#prodowl-tasks_rewards #tasklist > li .task_subtaskadd{
+
+    font-size:16px;
+    color: green;
+}
+
+#prodowl-tasks_rewards .task_edit_buttons a, #prodowl-tasks_rewards .task_edit_buttons a:hover, #prodowl-tasks_rewards .task_edit_buttons a:link, 
+#prodowl-tasks_rewards .task_edit_buttons a:active{
+    color: black;
+    font-size: 18px;
+    margin-left: 3px;
+}
+
+#prodowl-tasks_rewards .subtask_edit_buttons a, 
+#prodowl-tasks_rewards .subtask_edit_buttons a:hover, 
+#prodowl-tasks_rewards .subtask_edit_buttons a:link, 
+#prodowl-tasks_rewards .subtask_edit_buttons a:active{
+    font-size: 14px;    
+}
+
+
+#prodowl-tasks_rewards .edit_task_text .input-lg{
+    margin-left: -8px;
+}
+#prodowl-tasks_rewards .add_new_task_textarea{
+    width: 500px;
+}
+
+#prodowl-tasks_rewards .irs{
+    margin-top:-20px;
+}
+
+#prodowl-tasks_rewards #tasklist > li .taskcomplete-checkbox-wrap.displayed{
+    width: 600px;
+}
+
+#prodowl-tasks_rewards #tasklist > li .edit_task_text.displayed{
+    width: 540px;
+}
+#prodowl-tasks_rewards #tasklist > li .edit_task_button_container.displayed{
+    width: 40px;
+}
+
+
+
+#prodowl-tasks_rewards #tasklist > li {
+    position: relative !important;
+    display: block !important;
+    padding: 10px 15px !important;
+    margin: 0px !important;
+    margin-bottom: -1px !important;
+    background-color: #fff !important;
+    border: 1px solid #b1b1b1 !important;
+}
+
+#prodowl-tasks_rewards #tasklist > li:last-child {
+    margin-bottom: 0;
+    border-bottom-right-radius: 4px;
+    border-bottom-left-radius: 4px;
+}
+
+#prodowl-tasks_rewards .subtask-checkbox-wrap input{
+    position: absolute;
+    opacity: 0;
+    
+}
+
+#prodowl-tasks_rewards .subtask-checkbox-wrap input+label:before {
+    background: #fff;
+    border: 1px solid #b1b1b1;
+    border-radius: 3px;
+    content: '';
+    display: inline-block;
+    height: 15px;
+    margin-right: 10px;
+    vertical-align: middle;
+    width: 15px;
+    font-size: 10px;    
+}
+
+#prodowl-tasks_rewards .subtask-checkbox-wrap input:checked + label::after {
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    content: '\f00c';
+    position: absolute;
+    left: 4px;
+    top: 3px;
+    color: rgb(33, 127, 222);
+    font-size: 10px;    
+}
+
+#prodowl-tasks_rewards .subtask-checkbox-wrap.prodowl-hovering input+label::after {
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    content: '\f00c';
+    position: absolute;
+    left: 4px;
+    top: 3px;
+    color: rgb(33, 127, 222, 0.6);
+    font-size: 10px;    
+}
+
+
+
+#prodowl-tasks_rewards .taskcomplete-checkbox-wrap input {
+    position: absolute;
+    opacity: 0;
+}
+
+#prodowl-tasks_rewards .taskcomplete-checkbox-wrap input+label:before {
+    background: #fff;
+    border: 1px solid #b1b1b1;
+    border-radius: 3px;
+    content: '';
+    display: inline-block;
+    height: 25px;
+    margin-right: 10px;
+    vertical-align: middle;
+    width: 25px;
+    font-size: 14px;    
+}
+
+#prodowl-tasks_rewards .taskcomplete-checkbox-wrap input:checked + label::after {
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    content: '\f00c';
+    position: absolute;
+    left: 7px;
+    top: 5px;
+    color: rgb(255, 63, 124);
+    font-size: 14px;    
+}
+
+#prodowl-tasks_rewards .taskcomplete-checkbox-wrap.prodowl-hovering input+label::after {
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    content: '\f00c';
+    position: absolute;
+    left: 7px;
+    top: 5px;
+    color: rgb(33, 127, 222, 0.6);;
+    font-size: 15px;    
+}
+
+#prodowl-tasks_rewards .taskcomplete-checkbox-wrap input+label {
+    cursor: pointer;
+    font-weight: 400;
+    padding: 0;
+    position: relative;
+    display: block;
+    font-size: 20px;
+}
+#prodowl-tasks_rewards .taskcomplete-checkbox-label {
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+#prodowl-tasks_rewards input:disabled + label:before{
+    background: #aaa;
+    border: 1px solid #142540;
+}
+
+#prodowl-tasks_rewards input[type="checkbox"]:disabled + label:after{
+  background: #ccc;
+  color: red;    
+}
+
+#prodowl-tasks_rewards .task_container{
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#prodowl-tasks_rewards .task_text_label{
+    overflow:hidden;    
+}
+
+#prodowl-tasks_rewards a.edit_pencil, 
+#prodowl-tasks_rewards a.edit_pencil:hover, 
+#prodowl-tasks_rewards a.edit_pencil:active, 
+#prodowl-tasks_rewards a.edit_pencil:link {
+    color: #0066ff;
+}
+
+#prodowl-tasks_rewards .task_freetime_slider{
+    flex: 1 1 auto;
+    text-align: center;    
+    max-width: 200px;
+    display: none;
+}
+#prodowl-tasks_rewards .task_slider_container{
+    width: 70%;
+    margin: 0px auto;
+}
+
+#prodowl-tasks_rewards .subtask_slider{
+    position:absolute;
+    width: 70%;
+    margin: 0px auto;    
+}
+
+#prodowl-tasks_rewards .subslidercontainer{
+    position:relative;
+    height:2px;
+}
+
+#prodowl-tasks_rewards .subsliderfloat{
+    width: 70%;
+    margin: 0px auto;    
+    position:absolute;    
+}
+
+#prodowl-tasks_rewards .edit_slider_button_container{
+    position: absolute;
+    right: -20px;
+    top: -20px;
+}
+
+#prodowl-tasks_rewards .task_freetime_text{
+    font-family: Lato,'Work Sans',Poppins, Verdana;
+    font-size: 12px;
+}
+
+#prodowl-tasks_rewards .task_freetime_description{
+    display:block;
+}
+
+#prodowl-tasks_rewards .edit_task_text{
+    width: 50%;    
+}
+
+#prodowl-tasks_rewards .save_tasklist_container{
+    margin-top:20px;
+    margin-bottom:20px;
+}
+
+#prodowl-tasks_rewards #tasklist_save:hover, 
+#prodowl-tasks_rewards #add_new_task:hover {
+    background: -webkit-gradient( linear, left top, left bottom, color-stop(0.05, #378de5), color-stop(1, #79bbff) );
+    background: -moz-linear-gradient( center top, #378de5 5%, #79bbff 100% );
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#378de5', endColorstr='#79bbff');
+    background-color: #378de5;
+}
+
+#prodowl-tasks_rewards #tasklist_save, 
+#prodowl-tasks_rewards #add_new_task {
+    -moz-box-shadow: inset 0px 1px 0px 0px #bbdaf7;
+    -webkit-box-shadow: inset 0px 1px 0px 0px #bbdaf7;
+    box-shadow: inset 0px 1px 0px 0px #bbdaf7;
+    background: -webkit-gradient( linear, left top, left bottom, color-stop(0.05, #79bbff), color-stop(1, #378de5) );
+    background: -moz-linear-gradient( center top, #79bbff 5%, #378de5 100% );
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#79bbff', endColorstr='#378de5');
+    background-color: #79bbff;
+    -moz-border-radius: 6px;
+    -webkit-border-radius: 6px;
+    border-radius: 6px;
+    border: 1px solid #84bbf3;
+    display: inline-block;
+    color: #ffffff;
+    font-family: arial;
+    font-size: 15px;
+    font-weight: bold;
+    padding: 6px 24px;
+    text-decoration: none;
+    text-shadow: 1px 1px 0px #528ecc;
+    cursor: pointer;
+}
+
+#prodowl-tasks_rewards .input-lg {
+    height: 46px;
+    padding: 10px 16px;
+    font-size: 22px;
+    line-height: 1.33;
+    border-radius: 6px;
+    min-width:300px;
+}
+#prodowl-tasks_rewards .form-control {
+    display: block;
+    width: calc(100% - 24px);
+    height: 24px;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 18px;
+    color: #555;
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+    transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+}
+
+#prodowl-tasks_rewards .form-control:focus {
+    border-color: #66afe9;
+    outline: 0;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, .6);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, .6);
+}
+
+#prodowl-tasks_rewards [tooltip]{
+  position:relative;
+  display:inline-block;
+}
+#prodowl-tasks_rewards [tooltip]::before {
+    content: "";
+    position: absolute;
+    top:-6px;
+    left:50%;
+    transform: translateX(-50%);
+    border-width: 4px 6px 0 6px;
+    border-style: solid;
+    border-color: rgba(0,0,0,0.7) transparent transparent     transparent;
+    z-index: 99;
+    opacity:0;
+}
+
+#prodowl-tasks_rewards [tooltip-position='left']::before{
+  left:0%;
+  top:50%;
+  margin-left:-12px;
+  transform:translatey(-50%) rotate(-90deg) 
+}
+#prodowl-tasks_rewards [tooltip-position='top']::before{
+  left:50%;
+}
+#prodowl-tasks_rewards [tooltip-position='buttom']::before{
+  top:100%;
+  margin-top:8px;
+  transform: translateX(-50%) translatey(-100%) rotate(-180deg)
+}
+#prodowl-tasks_rewards [tooltip-position='right']::before{
+  left:100%;
+  top:50%;
+  margin-left:1px;
+  transform:translatey(-50%) rotate(90deg)
+}
+
+#prodowl-tasks_rewards [tooltip]::after {
+    content: attr(tooltip);
+    position: absolute;
+    left:50%;
+    top:-6px;
+    transform: translateX(-50%)   translateY(-100%);
+    background: rgba(0,0,0,0.7);
+    text-align: center;
+    color: #fff;
+    padding:4px 2px;
+    font-size: 12px;
+    min-width: 350px;
+    border-radius: 5px;
+    pointer-events: none;
+    padding: 4px 4px;
+    z-index:99;
+    opacity:0;
+}
+
+#prodowl-tasks_rewards [tooltip-position='left']::after{
+  left:0%;
+  top:50%;
+  margin-left:-8px;
+  transform: translateX(-100%)   translateY(-50%);
+}
+#prodowl-tasks_rewards [tooltip-position='top']::after{
+  left:50%;
+}
+#prodowl-tasks_rewards [tooltip-position='bottom']::after{
+  top:100%;
+  margin-top:8px;
+  transform: translateX(-50%) translateY(0%);
+}
+#prodowl-tasks_rewards [tooltip-position='right']::after{
+  left:100%;
+  top:50%;
+  margin-left:8px;
+  transform: translateX(0%)   translateY(-50%);
+}
+
+#prodowl-tasks_rewards [tooltip]:hover::after,[tooltip]:hover::before {
+   opacity:1
+}
+
+.prodowl-contentscript #prodowl-tasks_rewards {
+    width: calc(100% - 300px);
+    padding-top:10px;
+}
+#prodowl-modal-tasklist {
+    z-index: 2147483647 !important;
+}
+
+.prodowl-modal__overlay {
+    z-index: 2147483647 !important;    
+}
+

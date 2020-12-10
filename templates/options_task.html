@@ -1,0 +1,35 @@
+<li class="list-group-item" id="taskitem_{{task_index}}">
+    <div class='task_container'>
+        <div id="taskcheckboxwrap_{{task_index}}" class="taskcomplete-checkbox-wrap displayed">
+            <input type="checkbox" class="taskcomplete-checkbox" id="taskcomplete_{{task_index}}">
+            <label id="tasktextlabel_{{task_index}}" class="task_text_label">{{task_noneditable_text}}
+                <!-- <a href="#" class="edit_pencil" id="editpencil_{{task_index}}"><i class="fas fa-edit"></i></a>-->
+            </label>                                
+        </div>        
+        <div class='task_freetime_slider' id="freetimeslidercontainer_{{task_index}}">
+            <div class='task_slider_container' id="taskslidercontainer_{{task_index}}">
+                <input type="text" id="freetimeslider_{{task_index}}" class="freetime_slider" name="freetime_slider" value="{{task_freetime_credits}}" />
+            </div>
+            <div id="subslidercontainer_{{task_index}}" class="subslidercontainer"></div>
+        </div>
+        <div class='task_freetime_description' id="freetimedescription_{{task_index}}">
+            <a href="#" class="task_subtaskadd"  id="subtaskadd_{{task_index}}"><i class="fas fa-plus-circle"></i></a>               
+            <span class='task_freetime_text'>
+                Reward: {{task_allfreetime}} min
+            </span>
+        </div>     
+        <div class="task_edit_buttons" >
+             <a href="#" id="edittasklink_{{task_index}}" class="freetimeslider_edit"><i class="fas fa-sliders-h"></i></a>            
+             <a href="#" id="edittasktext_{{task_index}}" class="tasktask_edit"><i class="fas fa-edit"></i></a>
+             <a href="#" id="deletetask_{{task_index}}" class="delete_task"><i class="fas fa-trash-alt"></i></a>             
+        </div>
+        <div class="task_drag_container">
+            <!-- Material Design UI Icon Apache License -->
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M20 9H4v2h16V9zM4 15h16v-2H4v2z"/></svg>
+        </div>   
+    </div>
+    <ul id="subtasks_{{task_index}}" class="subtask_list"></ul>
+    <div class="task_subtaskadd_container">
+         
+    </div>
+</li>

@@ -1,0 +1,349 @@
+/********** BLOCK DIV **************/
+button.blackgreybutton 
+{
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	color: #ffffff;
+	padding: 10px 20px;
+	background: -moz-linear-gradient(
+		top,
+		#c2c2c2 0%,
+		#3b3b3b 50%,
+		#242424 50%,
+		#424242);
+	background: -webkit-gradient(
+		linear, left top, left bottom, 
+		from(#c2c2c2),
+		color-stop(0.50, #3b3b3b),
+		color-stop(0.50, #242424),
+		to(#424242));
+	border-radius: 10px;
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	border: 1px solid #969696;
+	-moz-box-shadow:
+		0px 1px 3px rgba(000,000,000,0.5),
+		inset 0px 0px 1px rgba(255,255,255,0.6);
+	-webkit-box-shadow:
+		0px 1px 3px rgba(000,000,000,0.5),
+		inset 0px 0px 1px rgba(255,255,255,0.6);
+	text-shadow:
+		0px -1px 0px rgba(000,000,000,1),
+		0px 1px 0px rgba(255,255,255,0.2);
+		
+	cursor:pointer;
+}
+
+
+
+
+
+#sticky_owl 
+{
+	width: 300px;  
+	height;
+	background: black; 
+	color: white; 
+	padding: 6px; 
+	position: relative; 
+	bottom: 0px; 
+	right: 160px;
+}
+
+
+
+
+/********** COUNTER DIV **************/
+#owlproductivity_timer_container
+{
+	color:#999 !important;	
+	padding:0px !important;
+	font-size:10px !important;
+	font-family: 'Helvetica Neue', Arial, Helvetica !important;
+	z-index: 999999999999999 !important;	
+}
+
+#owlproductivity_timer
+{
+	color:#333 !important;	
+	border: 1px solid #333333 !important;
+	background: white !important;
+	padding:1px !important;
+	font-size:14px !important;
+	font-family: 'Helvetica Neue', Arial, Helvetica !important;
+	z-index: 999999999999999 !important;
+}
+
+#owl_right_save_image
+{
+	position:absolute;
+	cursor:pointer;
+    top:28px !important;    
+    right: 23px !important;
+    width: 16px !important;
+}
+
+.prodowl-left #owl_right_save_image{
+    right: auto;
+    left: 23px;
+}
+.prodowl-right #owl_right_save_image{
+    right: 23px;
+    left: auto;
+}
+
+#owl_right_vacation_time{
+    cursor: pointer;
+    position:absolute;
+    top: -5px;
+    right: 18px;
+    width: 26px;
+}
+
+#owl_countdown_box
+{
+	width: 95px;  
+	height: 75px;
+	padding: 0px; 
+	position: relative; 
+	bottom: 20px; 
+	z-index: 999999999999999 !important;
+}
+#owl_countdown_box.prodowl-right{
+	right: 0px;    
+}
+#owl_countdown_box.prodowl-left{
+    left: 0px;
+}
+
+
+
+#daily_task_box
+{
+	width: 155px;  
+	padding: 0px; 
+	position: fixed; 
+	bottom: 20px; 
+	left: 20px;
+	z-index: 999999999999999 !important;
+	font-size:9px;
+	font-family:Verdana;
+	
+	position:fixed;
+	padding:4px;
+	height:40px;
+	border: 1px solid rgb(137, 0, 0);
+	line-height:10px;
+	
+	opacity:0.8;
+	background-color:rgba(192,192,192,0.8);	
+	background:white;
+}
+
+#daily_task_box_x
+{
+	display:block;
+	position:absolute;
+	top:0;
+	right:0;
+}
+
+
+#moving_owl
+{
+	position:absolute;
+	left:0;
+	top:0;
+	z-index: 999999999999 !important;
+}
+
+
+#owl-proxy-image
+{
+	position: absolute;
+	visibility: hidden;
+	z-index: 999999999999 !imporant;
+}
+
+#owl_drag_proxy_img
+{
+	
+}
+.prodowl-arrow-button-allowed{
+    position: absolute;
+    right: 0px;
+    left: auto;
+    top: 40px;
+    font-size: 20px;
+}
+
+.prodowl-left .prodowl-arrow-button-allowed{
+    transform: scale(-1, 1);
+    right: auto;
+    left: 0px;    
+}
+
+a.prodowl-switchside,a.prodowl-switchside:hover,a.prodowl-switchside:active,a.prodowl-switchside:link{
+    color: black !important;
+}   
+
+
+
+
+
+/***************   BLOCK PAGE ********************/
+#owl_productivity_blockpage h3
+{
+	font-size:24px;
+	font-family:'Proxima Nova Regular','Helvetica Neue',Arial,Helvetica,sans-serif;
+	line-height: 20px;
+	letter-spacing: 1px;
+	font-weight: bold;
+	margin-top:5px;
+	margin-bottom:5px;	
+}
+
+#owl_productivity_blockpage h4
+{
+	font-family: 'Segoe UI',Verdana,Arial;
+	font-size: 16px;
+	color: #999;
+	margin-top:0px;
+	margin-bottom:5px;	
+}
+
+
+#owl_productivity_blockpage .owl_big_button {
+	-moz-box-shadow:inset 0px 1px 0px 0px #75b5ff;
+	-webkit-box-shadow:inset 0px 1px 0px 0px #75b5ff;
+	box-shadow:inset 0px 1px 0px 0px #75b5ff;
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #137ced), color-stop(1, #003a96) );
+	background:-moz-linear-gradient( center top, #137ced 5%, #003a96 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#137ced', endColorstr='#003a96');
+	background-color:#137ced;
+	-moz-border-radius:5px;
+	-webkit-border-radius:5px;
+	border-radius:5px;
+	border:1px solid #0055cc;
+	display:inline-block;
+	color:#fafafa;
+	font-family:Arial;
+	font-size:16px;
+	font-weight:bold;
+	padding:27px 27px;
+	text-decoration:none;
+	text-shadow:1px 1px 0px #11508f;
+}
+#owl_productivity_blockpage .owl_big_button:hover {
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #003a96), color-stop(1, #137ced) );
+	background:-moz-linear-gradient( center top, #003a96 5%, #137ced 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#003a96', endColorstr='#137ced');
+	background-color:#003a96;
+	cursor: pointer;
+}
+#owl_productivity_blockpage .owl_big_button:active 
+{
+	position:relative;
+	top:1px;
+}
+
+#owl_productivity_blockpage #owl_container
+{
+	-webkit-border-radius: 10px;
+	border: 1px solid #969696;
+	-webkit-box-shadow:
+		0px 1px 3px rgba(000,000,000,0.5),
+		inset 0px 0px 1px rgba(255,255,255,0.6);
+		
+	position:relative;
+	background:#ccc;
+	width:500px;
+	height:200px;		
+
+}
+
+#owl_productivity_intervention #owl_intervention_container{
+	border-radius: 10px;
+	border: 1px solid #969696;
+	box-shadow:0px 1px 3px rgba(000,000,000,0.5),
+		inset 0px 0px 1px rgba(255,255,255,0.6);
+	position:relative;
+	background:#ccc;
+	width:532px;
+	height:229px;		    
+}
+
+.prodowl-tasklist-button-container{
+    cursor:pointer;
+}
+.prodowl-tasklist-button{
+    position: absolute !important;
+    background: white !important;
+    padding: 5px 5px !important;
+    font-size: 14px !important;
+    opacity: 0.9;
+    border: 1px solid black !important;
+    top: 17px;
+    left: 15px;    
+    right: auto;
+    font-family: Verdana, Arial !important;
+
+}
+
+.prodowl-left .prodowl-tasklist-button{
+    right: 15px;
+    left: auto;
+}
+
+
+
+.prodowl-tasklist{
+    
+}
+
+.prodowl-allowed-desc{
+    padding-left: 8px;
+    font-size:11px !important;
+    font-family:Verdana, Arial !important;
+    display: inline-block;
+    position: absolute;
+    top: 35px;    
+    left:auto;
+    right: auto;
+    
+}
+
+.prodowl-left .prodowl-allowed-desc{
+    left: 36px;
+    right: auto;
+}
+
+.prodowl-left #owlproductivity_timer_container{
+    margin-left: 75px;
+}
+.prodowl-right #owlproductivity_timer_container{
+    margin-left: 0px;
+}
+
+
+
+
+a.prodowl-tasklist, a.prodowl-tasklist:hover, prodowl-tasklist:active, prodowl-tasklist:link{
+    color:black !important;
+}
+
+
+
+
+#owl_countdown_box .prodowl-scheduled-freetime{
+    width: 50px !important;
+    display: inline-block !important;
+    margin-top: 10px !important;
+    margin-left: -4px !important;
+    font-size: 10px !important;
+    text-align: center !important;
+}
+
+
+
+

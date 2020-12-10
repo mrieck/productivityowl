@@ -1,0 +1,58 @@
+.ui-timepickr {
+    margin: 0 0 20px 0;
+	/*
+	position:relative;
+	*/
+	position: absolute;
+	z-index: 999999;
+}
+
+.ui-timepickr-row {
+    margin: 0;
+    padding: 0;
+    margin-top: 2px;
+    display: none;
+    position: relative;
+	overflow:hidden;
+}
+
+.ui-timepickr-button {
+    float: left;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    list-style-type: none;
+}
+
+.ui-timepickr-button span {
+    font-size: .7em;
+    padding: 4px 6px 4px 6px;
+    margin-left: 2px;
+    text-align: center;
+    cursor: pointer;
+    display: block;
+    text-align: center;
+    border-width: 1px;
+    border-style: solid;
+}
+
+.timeBox {
+    width: 15px;
+    color: #fff;
+    font-size: 14px;
+    text-align: center;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    -moz-background-clip: padding;
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box;
+    background: #a3a3a3;
+    -webkit-transition: background 0.2s linear, ease-in;
+    -moz-transition: background 0.2s linear, ease-in;
+}
+
+.timeBox.ui-state-hover {
+    background: #676767;
+    border: 1px solid #676767;
+}

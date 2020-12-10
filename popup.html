@@ -1,0 +1,84 @@
+<html>
+<head>
+	<link rel='stylesheet' type='text/css' href='css/popup.css' />
+	<script type="text/javascript" src="jslib/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="jslib/time.js"></script>    
+	<script type="text/javascript" src="js/options/save_for_later.js"></script>			
+	<script type="text/javascript" src="js/popup.js"></script>		
+</head>
+<body>
+<div class="owl-container">
+    <div>
+        <img src="img/advice_owl_small.png" />
+    </div>
+    <div class="owl-notice-container">
+        <span id="owl_notice">You are now being productive.</span>
+        <span id="tasks_completed">5 tasks completed</span>
+    </div>
+</div>
+<div id="vacationdisplay_inactive" class="vacationdisplay_container">
+    <span class="vacationdisplay_label">Break Time Available: </span>
+    <input value="0" id="vacationtime_knob" disabled="disabled">
+    <span class="vacationdisplay_label">min</span> 
+    <a href="#" id="use_break_time">
+        <img class="breaktime_image" src="img/vacation_icon_small.png" />Use Break Time
+    </a>
+    <span id="break_time_none"></span>
+</div>       
+<div id="vacationdisplay_active" class="vacationdisplay_container" style="display:none;">
+    <span id="vacationdisplay_active_label" class="vacationdisplay_label">You are using break time</span> 
+    <a href="#" id="stop_break_time">
+        <img class="stopbreaktime_image" src="img/stop_vacation_icon_small.png" />Stop Break Time
+    </a>
+</div>    
+    
+    <!--
+<div class="prodowl_button_container">
+    <div>
+        <button id="manage_tasks" class="prodowl-button prodowl-button-small">Manage Tasks</button>           
+    </div>
+    <div>
+        <div id="productive_time_active">
+            <button id="use_break_time" class="prodowl-button prodowl-button-small">Use Break Time</button>
+        </div>
+        <div id="vacation_time_active">
+            <button id="remove_freetime" class="prodowl-button">Stop Break Time</button>
+        </div>
+    </div>
+</div>
+-->
+
+<div class="option-link-container">
+<a id="manage_tasks" href="#">
+	Manage Tasks
+</a>
+    <!--
+&nbsp;|&nbsp; 
+<span id="productive_time_active">
+<a id="use_break_time" class="use_break_time" href="#">
+	Use Break Time
+</a>
+</span>
+
+<span id="vacation_time_active">
+<a id="stop_break_time" href="#">
+	Use Break Time
+</a>
+</span>
+-->
+
+&nbsp;|&nbsp; 
+<a id="owl_option_link" class="owl_option_link" href="#">
+	Options Page
+</a>
+</div>
+<div id="saved_for_later_container">
+    <div class="savedforlater_display_text" style="display:none;">Saved For Later Websites</div>
+    <div id="saved_for_later_list" style="display:none;">
+    </div>
+    <br>
+</div>
+
+</body>
+
+</html>

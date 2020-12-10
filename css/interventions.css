@@ -1,0 +1,122 @@
+
+#owl_productivity_intervention{
+    margin-top:30px;
+}
+
+.intervention_owl{
+    position: absolute;
+    left: 128px;
+    top: 79px;    
+}
+
+#intervention_timer{
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    font-size: 26px;
+    color: rgb(255 0 0);
+    margin-top: 0px;
+    margin-bottom: 15px;
+    line-height: 17px;
+    font-weight: bold;
+}
+
+#owl_productivity_intervention h5{
+    font-size: 1.4rem;
+    font-family: Verdana, sans-serif;    
+    margin-bottom: 10px;
+    margin-top: 18px;
+}
+
+#intervention_subtasks{
+    display:none;
+}
+#intervention_feelings{
+    display:none;
+}
+#intervention_intention{
+    display:none;
+}
+#intervention_costbenefit{
+    display:none;
+}
+
+
+.prodowl-intervention-description{
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    max-width: 800px;
+    font-size: 16px;    
+}
+
+/***************** Tables for Interventions *********************/
+
+.prodowl-table-container table {
+	border-collapse:collapse;
+	border-spacing:0;
+	-webkit-box-shadow:0px 7px 6px -6px rgba(0,0,0,.28);
+	   -moz-box-shadow:0px 7px 6px -6px rgba(0,0,0,.28);
+			    box-shadow:0px 7px 6px -6px rgba(0,0,0,.28);
+	margin-bottom:0px;
+	margin-top:.5em;	
+	width:100%; 
+	max-width:100%;
+}
+.prodowl-table-container table thead tr {border-bottom:3px solid #0085a6; color:#000;}
+.prodowl-table-container table tfoot tr {border-top:3px solid #0085a6;}
+.prodowl-table-container table thead th, .prodowl-table-container table tfoot th {
+	background-color:#fff;
+	color:#000;
+	font-size:.83333em;
+	line-height:1.8;
+	padding: 15px 14px 13px 14px;
+	position:relative;
+	text-align:left;
+	text-transform:uppercase;	
+}
+
+.prodowl-table-container table thead th:first-child{
+    border-top-left-radius: 10px;
+}    
+.prodowl-table-container table thead th:last-child{
+    border-top-right-radius: 10px;
+    text-align:center;
+}    
+.prodowl-table-container table tbody td:last-child{
+    text-align: center;
+}
+a.remove_limit{
+    cursor:pointer;
+}
+
+
+.prodowl-table-container table tbody tr {background-color:#fff;}
+.prodowl-table-container table tbody tr:hover {background-color:#eee; color:#000;}
+.prodowl-table-container table th, .prodowl-table-container table td {
+	border:1px solid #bfbfbf;
+	padding:10px 14px;
+	position:relative;
+	vertical-align:middle;
+}
+
+.prodowl-table-container table th{
+    font-family: Verdana, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    font-size:14px;
+}
+
+.prodowl-table-container caption {font-size:1.111em; font-weight:300; padding:10px 0;}
+
+.prodowl-table-container table{
+    max-width: 900px;
+}
+
+#intervention_footer_buttons{
+    text-align: right;
+    max-width: 900px;
+    margin-top: 10px;
+}
+
+#owl_intervention_completed{
+    display:none;
+}
+#owl_intervention_expired{
+    display:none;
+}

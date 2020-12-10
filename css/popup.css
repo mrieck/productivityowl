@@ -1,0 +1,188 @@
+@import "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";
+@import "https://fonts.googleapis.com/css?family=Work+Sans:400;500;600";
+@import "https://fonts.googleapis.com/css?family=Lato:400;500;600";
+body {
+  min-width:400px;
+  overflow-x:hidden;
+  margin: 0px;
+  padding: 0px;
+}
+
+.owl-container{
+    padding-left:8px;
+    padding-right:8px;    
+    display:flex;
+}
+
+img
+{
+  margin:5px;
+  vertical-align:middle;
+}
+#saved_or_description
+{
+	font-size: 12px;
+	font-family: 'Segoe UI', Helvetica, Arial;
+}
+
+/************  COPIED FROM OPTIONS.CSS **********************/
+
+#saved_table {
+    margin:0;
+    padding:0;
+    font:12px/15px "Helvetica Neue",Arial, Helvetica, sans-serif;
+    color: #555;
+    overflow:hidden;
+    border:1px solid #d3d3d3;
+    background:#fefefe;
+    width:600px;
+    margin-left:5px;
+    -webkit-border-radius:5px; /* Saf3-4 */
+    border-radius:5px;
+    -webkit-box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
+}
+#saved_table th, .manage_table td {padding:6px 10px 6px; text-align:center; }
+#saved_table th {padding-top:6px; text-shadow: 1px 1px 1px #fff; background:#e8eaeb;}
+#saved_table td {border-top:1px solid #e0e0e0; border-right:1px solid #e0e0e0;}
+#saved_table tr.odd-row td {background:#f6f6f6;}
+#saved_table td.first, th.first {text-align:center}
+#saved_table td.last {border-right:none;}
+/*
+Background gradients are completely unnecessary but a neat effect.
+*/
+#saved_table td {
+    background: -webkit-gradient(linear, 0% 0%, 0% 25%, from(#f9f9f9), to(#fefefe));
+}
+#saved_table tr.odd-row td {
+    background: -webkit-gradient(linear, 0% 0%, 0% 25%, from(#f1f1f1), to(#f6f6f6));
+}
+#saved_table th {
+    background: -webkit-gradient(linear, 0% 0%, 0% 20%, from(#ededed), to(#e8eaeb));
+}
+/*
+I know this is annoying, but we need additional styling so webkit will recognize rounded corners on background elements.  Nice write up of this issue: http://www.onenaught.com/posts/266/css-inner-elements-breaking-border-radius
+And, since we've applied the background colors to td/th element because of IE, Gecko browsers also need it.
+*/
+#saved_table tr:first-child th.first {
+    -webkit-border-top-left-radius:5px; /* Saf3-4 */
+}
+#saved_table tr:first-child th.last {
+    -webkit-border-top-right-radius:5px; /* Saf3-4 */
+}
+#saved_table tr:last-child td.first {
+    -webkit-border-bottom-left-radius:5px; /* Saf3-4 */
+}
+#saved_table tr:last-child td.last {
+    -webkit-border-bottom-right-radius:5px; /* Saf3-4 */
+}	
+
+.owl-option-link{
+    float: right;
+}
+
+.prodowl_button_container{
+    text-align:center;
+    margin: 0px auto;
+    display:flex;
+    align-items: center;
+    justify-content: space-around;    
+}
+
+
+.prodowl-button {
+    font-family: Poppins, "Work Sans", Lato, sans-serif;
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 600;
+    text-decoration: none;
+    text-align: center;
+    border: 2px solid transparent;
+    border-radius: 5px;
+    white-space: nowrap;
+    padding: 0.6rem 1.3rem;
+    opacity: 1;
+    background-color: #ff7000;
+    cursor: pointer;
+}
+
+.prodowl-button:hover, .prodowl-button:active, .prodowl-button:focus{ 
+    -webkit-filter: brightness(115%);
+    filter: brightness(115%);
+    text-decoration: none;
+}
+
+.prodowl-button-small{
+    padding: 6px 15px;
+    font-size: 12px;    
+}
+
+#owl_notice{
+    font-size: 20px;
+    display:block;
+}
+#tasks_completed{
+    font-size:11px;
+    display:block;
+    float:right;
+}
+
+.owl-notice-container{
+    display: inline-block;
+    align-items: center;
+    align-self: center;    
+}
+
+.breaktime_image{
+    margin-top:0px;
+}
+
+.option-link-container{
+    margin: 10px;
+    font-size:14px;
+}
+
+.option-link-container a, .option-link-container a:active, .option-link-container a:link{
+    color: #ff5e00;
+    font-size: 18px;
+    font-family: "Lato", "Work Sans", Verdana;
+    text-decoration: none;    
+}
+
+.option-link-container a:hover {
+    text-decoration: underline;        
+}
+
+
+
+.vacationdisplay_container{
+    background: #fff6b6;
+    padding: 5px;     
+    margin-top:5px;
+}
+.vacationdisplay_container input{
+    width: 40px;
+    font-family: Arial,Verdana;
+    font-weight: bold;
+    text-align: center;
+    color: rgb(135, 206, 235);    
+}
+
+.savedforlater_display_text{
+    background: white;
+    padding-left: 5px;
+    margin-top: 10px;
+    text-decoration: underline;
+    cursor:pointer;
+}
+#saved_for_later_list{
+    margin-top: 3px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+
+a#use_break_time, a#use_break_time:hover, a#use_break_time:active, a#use_break_time:focus,
+a#stop_break_time, a#stop_break_time:hover, a#stop_break_time:active, a#stop_break_time:focus{
+    color:black;
+    text-decoration: underline;
+}

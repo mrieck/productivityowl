@@ -1,0 +1,820 @@
+<!DOCTYPE html><html>
+<head>
+	<title>Owl Productivity Options</title>
+	<link rel='stylesheet' type='text/css' href='jslib/jquery.qtip.css' />	
+	<link rel='stylesheet' type='text/css' href='css/timepicker.css' />	
+	<link rel='stylesheet' type='text/css' href='css/yahoo-button.css' />
+	<link rel='stylesheet' type='text/css' href='css/options.css' />
+	<link rel='stylesheet' type='text/css' href='css/tasks.css' />   
+	<link rel='stylesheet' type='text/css' href='css/stats.css' />       
+	<link rel='stylesheet' type='text/css' href='css/interventions.css' />       
+	<link rel='stylesheet' type='text/css' href='css/ion.rangeSlider.css' />
+    <link rel="stylesheet" type='text/css' href="css/font-awesome/all.css">    
+	<link rel='stylesheet' type='text/css' href='css/micromodal.css' />
+    
+    <!-- Font Awesome JS -->
+    <script src="jslib/fontawesome-solid.js"></script>
+    <script src="jslib/fontawesome.js"></script>
+    
+    <!-- library includes -->
+	<script type="text/javascript" src="jslib/jquery-3.3.1.min.js"></script>
+	<script type="text/javascript" src="jslib/jquery.qtip.js"></script>
+	<script type="text/javascript" src="js/mustache.js"></script>    
+	<script type="text/javascript" src="js/yahoo-devent-element-button-min.js"></script>	
+	<script type="text/javascript" src="js/timepicker.js"></script>	
+    <script type="text/javascript" src="jslib/Sortable.min.js"></script>
+    <script type="text/javascript" src="jslib/ion.rangeSlider.js"></script>
+    <script type="text/javascript" src="jslib/micromodal.min.js"></script>
+    <script type="text/javascript" src="jslib/chart.min.js"></script>
+	<script type="text/javascript" src="jslib/date.js"></script>	
+    <script type='text/javascript' src='jslib/gibberish.js'></script>
+    <script type='text/javascript' src='jslib/editable.table.js'></script>
+    
+    <!-- my code -->
+	<script type="text/javascript" src="js/options/scheduler.js"></script>				
+	<script type="text/javascript" src="js/options/save_for_later.js"></script>			
+	<script type="text/javascript" src="js/options/owl_sayings.js"></script>	
+	<script type="text/javascript" src="js/options/options_page.js"></script>	
+    <script type="text/javascript" src="js/options/task_list.js"></script>	
+    <script type="text/javascript" src="js/options/stats.js"></script>	
+    <script type="text/javascript" src="js/options/interventions.js"></script>	
+    <script type="text/javascript" src="js/options/respect.js"></script>	
+</head>
+<body>
+	<div id="sidebar">
+		<div id="sidebar-two">
+		    <div id="logo">
+		        <h1>
+		            <a href="#">
+						<span>
+							What?
+						</span>
+					</a>
+		        </h1>
+		    </div>
+            <div class='version_2_text'>
+                Ver 2.0
+            </div>
+		    <!-- fine logo -->
+		    <hr>
+		    <div id="navigation">
+		        <ul>
+		            <li class="active" id="li_manage_websites">
+		                <span>
+		                    <strong>
+		                        Manage Websites
+		                    </strong>
+		                </span>
+		            </li>
+		            <li id="li_prodowl-tasks_rewards">
+		                <a href="#">Tasks & Rewards</a>
+		            </li>						                    
+		            <li id="li_timeboxing">
+		                <a href="#">Timeboxing</a>
+		            </li>
+		            <li id="li_browsing_stats">
+		                <a href="#">Browsing Stats</a>
+		            </li>	
+		            <li id="li_earn_respect">
+		                <a href="#">Earn Respect</a>
+		            </li>                    
+		            <li id="li_owl_interventions">
+		                <a href="#">Owl Interventions</a>
+		            </li>                    
+		            <li id="li_import_export">
+		                <a href="#">Import/Export Settings</a>
+		            </li>				
+		        </ul>
+		    </div>
+		    <!-- fine navigazione -->
+		    <div id="pnl_menu0">
+		    </div>
+		</div>
+	</div>
+	<div class="main_content">
+		<br>
+		<div>
+			<img id="owl_image" src="img/advice_owl_small.png" />
+			<!-- You can't import My Respect -->
+			<!-- You must earn my respect before I allow longer page views -->
+			<hr>
+			<br>
+		</div>			
+		
+		<div id="manage_websites">
+			<div class="left_options">
+                <p class="settings_container">
+                    I would like <input name="allowed_seconds" id="allowed_seconds" type="text" size="2" value="30" /> seconds to browse a webpage before close.
+                </p>
+				<table>
+					<tr>
+						<td>					
+							<h3>
+								Allowed Websites 
+							</h3>
+						</td>
+						<td>
+							<span class="small_desc">(Work-related websites, e.g. stackoverflow.com)</span>
+						</td>
+					</tr>
+				</table>	
+				<textarea id="allowed_websites" rows="12"></textarea>
+				<br><br>
+				<table>
+					<tr>
+						<td>					
+							<h3>
+								Blocked Websites
+							</h3>
+						</td>
+						<td>
+							<span class="small_desc">(Immediately Blocked, e.g. facebook.com)</span>
+						</td>
+					</tr>
+				</table>				
+				
+				<h3>
+				</h3>
+				<textarea id="blocked_websites" rows="12"></textarea>	
+				<br>
+				<br>
+				<button class="owl_big_button" id="owl_save_options">Save</button>
+			</div>
+            <div class="right_options">
+                <div class="extra_options">                    
+                    <h3>Productivity Owl 2.0</h3>                    
+                    <div class="manage_extra">
+                        <!--
+                        <div class="author-img-container">
+                            <a target="_blank" href="https://www.twitter.com/productivemarkr">
+                            <img class="author-img" src='img/mark.jpg'>
+                            </a>
+                        </div>
+                        -->
+                        <p class="welcome-to-owl" style="padding-bottom:8px;">
+                            Welcome to the new Productivity Owl!                              
+                            <br><br>
+                            The owl has new features - not only is he going to help you form better web browsing habits, but through interventions, task rewards,
+                            and gamification you'll find new levels of motivation to be productive and achieve your goals.  
+                            <br><br>
+                            <!--
+                            You can <a class="welcome-link" style="color:white;" href="#">watch this tutorial</a> for an overview of using the owl.                          
+                            -->
+                        </p>                        
+                    </div>
+                </div>
+                <br>
+                <div style="display:flex;width:100%;justify-content: space-between;">
+                        <div id="social-platforms" class="author-social-links">
+                            <a target="_blank" class="socialbtn socialbtn-icon socialbtn-twitter" href="https://www.twitter.com/ProductivityOwl">
+                                <i class="fab fa-twitter"></i><span>@ProductivityOwl</span>
+                            </a>                          
+                            <!--
+                            -->
+                            <a target="_blank" class="socialbtn socialbtn-icon socialbtn-googleplus" href="mailto:markrieck81@gmail.com">
+                                <i class="fas fa-envelope"></i><span>Email</span>
+                            </a>
+                            <!--
+                            <a class="socialbtn socialbtn-icon socialbtn-mark mark-twitter" href="https://www.twitter.com/productivemarkr">
+                                <i class="fab fa-twitter"></i><span>My Twitter</span>
+                            </a>                           
+                            -->
+                        </div>  
+                    <div>
+                        <div class="settings_container" style="font-family: 'Poppins','Lato',Arial,sans-serif;margin-left: -10px;">Friends of the Owl</div>
+                        <a style="display: inline;" href="https://www.snipcss.com"><img width="48" src="img/snip_kiwi_64x64.png" style=""></a>
+                        <a style="display:inline;" href="https://www.scrapehawk.com"><img width="48" src="img/scrapehawk_64x64.png"></a>
+                    </div>                       
+                </div>
+                <p>Make sure to follow the owl on Twitter if you find him useful!</p>                
+                <br style='clear:both;'>
+                <div style="display:flex;width:100%;justify-content: space-between;">
+                    <div>
+                        <h3>
+                            More Options
+                        </h3>
+                        <span class="settings_desperation">
+                            <input type="checkbox" id="desperation_mode" name="desperation_mode" /> <label for="desperation_mode">Anti-Desperation (time decreases on reload)</label>
+                        </span>                
+                        <span class="settings_desperation">
+                            <input type="checkbox" id="owl_interventions_enabled" name="owl_interventions_enabled" /> <label for="owl_interventions_enabled">Owl Interventions</label>
+                        </span>                
+                        <span class="settings_desperation">
+                            <input type="checkbox" id="browsing_stats_enabled" name="browsing_stats_enabled" /> <label for="browsing_stats_enabled">Record Browsing Stats</label>
+                        </span>                                     
+                    </div>
+                
+                </div>
+
+                <br style="clear:both;"><br><br><br><br><br><br><br>                
+            </div>
+			<!--
+			<div class="extra_options">
+				<h3>Extras</h3><br>
+				<div class="manage_extra">
+					<input type="checkbox" id="close_unused" name="close_unused" /> Close Unused Tabs
+					After <input name="unused_minutes" id="unused_minutes" type="text" size="2" value="15" /> minutes.
+				</div>			
+			</div>
+            -->
+            
+
+		</div>
+		<div id="timeboxing" class="yui-skin-sam">
+			<br>
+			 <h3>Timeboxing</h3>
+             <span style="margin-top:5px;margin-bottom:8px;display: inline-block;" class='settings_container'>
+                 You can use this schedule to plan certain time periods for work or freetime.  
+             </span>
+			 <br>
+			 <fieldset id="add_freetime_fieldset">
+				<legend>Add Freetime to Schedule</legend>
+                <div style="display:flex;">
+                    <div id="">
+                        <div id="days_of_week_div">
+                            <div id="day_label">Days of the week:</div>
+                            <input id="day_1" type="checkbox" name="day_1" value="1" checked />
+                            <input id="day_2" type="checkbox" name="day_2" value="2" checked />
+                            <input id="day_3" type="checkbox" name="day_3" value="3" checked />
+                            <input id="day_4" type="checkbox" name="day_4" value="4" checked />
+                            <input id="day_5" type="checkbox" name="day_5" value="5" checked />
+                            <input id="day_6" type="checkbox" name="day_6" value="6" />
+                            <input id="day_7" type="checkbox" name="day_7" value="7" />
+                        </div>
+                        <br>
+                        <table>
+                            <tr>
+                                <td>
+                                    <fieldset id="freetime_start_fieldset">
+                                            <label for="start_time" class="control-label">Start Time: </label>
+                                            <input id="start_time" name="start_time" maxlength="8" class="timepicker">
+                                    </fieldset>						
+                                </td>
+                                <td>
+                                    <fieldset id="freetime_end_fieldset">
+                                            <label for="end_time" class="control-label">End Time: </label>
+                                            <input id="end_time" name="end_time" maxlength="8" class="timepicker">
+                                    </fieldset>						
+                                </td>					
+                            </tr>
+                        </table>
+                    </div>
+                    <div style="padding-top: 40px;padding-left: 20px;">
+                        <button class="prodowl-button prodowl-button-alt" id="but_schedule_freetime">Schedule Free Time</button>                        
+                    </div>
+                    <div style="padding-top: 40px;padding-left: 20px;">
+                        <button class="prodowl-button prodowl-button-alt2" id="but_schedule_worktime">Schedule Work Time</button>
+                    </div>
+                </div>
+				<br style="clear:both">
+			</fieldset>	
+			<br><br>			
+			<div id="scheduler_alert_container">
+			</div>
+            <h4 id="scheduler_calendar_title">Current Schedule</h4>
+            <!-- 
+            &nbsp;&nbsp;&nbsp;&nbsp;<button id="scheduler_save">Save</button>
+            -->
+			<br>
+			<div id="timespan_container">
+				<table id="timespan_table" cellspacing="0" cellpadding="0">
+					<thead>
+						<tr>
+							<th>&nbsp;</th>
+							<th colspan="4">12am</th>
+							<th colspan="4">1am</th>
+							<th colspan="4">2am</th>
+							<th colspan="4">3am</th>
+							<th colspan="4">4am</th>
+							<th colspan="4">5am</th>
+							<th colspan="4">6am</th>
+							<th colspan="4">7am</th>
+							<th colspan="4">8am</th>
+							<th colspan="4">9am</th>
+							<th colspan="4">10am</th>
+							<th colspan="4">11am</th>							
+							<th colspan="4">12pm</th>
+							<th colspan="4">1pm</th>
+							<th colspan="4">2pm</th>
+							<th colspan="4">3pm</th>
+							<th colspan="4">4pm</th>
+							<th colspan="4">5pm</th>
+							<th colspan="4">6pm</th>
+							<th colspan="4">7pm</th>
+							<th colspan="4">8pm</th>
+							<th colspan="4">9pm</th>
+							<th colspan="4">10pm</th>
+							<th colspan="4">11pm</th>
+						</tr>
+					</thead>
+					<tbody id="timespan_tbody">
+					</tbody>
+				</table>
+				
+				<br><br>
+				<div id="schedule_edit_container">
+				</div>
+				
+				<br><br>
+			</div>
+		</div>
+		<div id="prodowl-tasks_rewards" class="yui-skin-sam">            
+            <div class="tasks-rewards-top">
+                <div>
+                    <h3 style="margin-top:2px;">Tasks & Rewards</h3>   
+                    <p style="margin-top:10px;">For task completion goals/stats visit the <a href="#" class="stats_page_link">Stats page</a>.
+                    </p>
+                </div>
+                <div style="margin-left:auto;text-align:right;">
+                        <div id="vacationdisplay_container">
+                            <span class="vacationdisplay_label">Break Time Earned: </span>
+                            <input value="0" id="vacationtime_knob" disabled="disabled" />
+                            <span class="vacationdisplay_label">min</span>                        
+                        </div>                        
+                        <div class="settings_container">
+                            <span class="vacationdisplay_label">Each completed task earns:</span>
+                            <input name="freetime_earned_default" id="freetime_earned_default" type="text" size="2" value="5" /> 
+                            <span class="vacationdisplay_label"> min</span>
+                        </div>                        
+                    
+                </div>
+            </div>
+                <h3 class="task_heading" style="padding-top:10px;padding-bottom:2px;">Enter your tasks: <span tooltip="Enter one per line, use a dash at start of line for it to be subtask" tooltip-position="right"><i class="fas fa-question-circle"></i></span></h3>
+                <div class="addnewtask_container">
+                    <div>
+                        <textarea class="add_new_task_textarea" id="addtask_text" rows="6"></textarea>
+                    </div>
+                    <div>
+                        <button class="add_new_task" id="add_new_task">Add New Task</button>
+                    </div>
+                    <div class="task_options_container">
+                    </div>
+                </div>
+                
+                <div class='no_tasks_div' style='display:none;'>
+                    You don't have any tasks - please add one
+                </div>
+                <!--
+                <ul id="tasklist" class="list-group">                
+                    <li class="list-group-item">
+                        <div class='task_container'>
+                            <div class="taskcomplete-checkbox-wrap">
+                                <input type="checkbox" class="taskcomplete-checkbox" id="xxx" checked="">
+                                <label class="task_text_label"></label>                                
+                            </div>        
+                            <div class='edit_task_text'>
+                                <input type="text" class="form-control input-lg" id="inputxxxx">
+                            </div>
+                            <div class='task_freetime_slider'>
+                                <div class='task_slider_container'>
+                                    <input type="text" id="freetimeslider_XXXX" class="freetime_slider" name="freetime_slider" value="" />
+                                </div>
+                            </div>
+                            <div class="task_drag_container">
+                                <i class="fas fa-arrows-alt-v"></i>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+                -->
+                <ul id="tasklist" class="list-group" style='display:none;'>
+                    <!--
+                    <li class="list-group-item">This is <a href="http://SortableJS.github.io/Sortable/">Sortable</a></li>
+                    -->
+                </ul>     
+                <div id="tasklist_alert_container" style="display:none;">
+                    <div class="alert alert-info">
+                        <a class="close close_alert" data-dismiss="alert" href="#">X</a>
+                        <h4 class="alert-heading">Task list Saved</h4>
+                    </div>
+                </div>
+                <!--
+                save automatically anytime something changes                
+                <div class="save_tasklist_container">
+                    <button id="tasklist_save">Save Task List</button>
+                </div>
+                -->
+                <br><br><br><br><br><br><br><br>
+                
+                <!--
+				<table>
+					<tr>
+						<td>
+							<fieldset id="freetime_start_fieldset">
+									<label for="reset_tasks_rewards" class="control-label">Reset vacation time daily at: </label>
+									<input id="reset_tasks_rewards" name="reset_tasks_rewards" maxlength="8" class="timepicker">
+							</fieldset>						
+						</td>
+					</tr>
+				</table>				
+				<br><br>				
+                Which days accrue vacation automatically without having to visit an Allowed Websites?
+               <div id="days_of_vacation">
+                   <div id="day_label">Days of the week:</div>
+                   <input id="vday_1" type="checkbox" name="vday_1" value="1" />
+                   <input id="vday_2" type="checkbox" name="vday_2" value="2" />
+                   <input id="vday_3" type="checkbox" name="vday_3" value="3" />
+                   <input id="vday_4" type="checkbox" name="vday_4" value="4" />
+                   <input id="vday_5" type="checkbox" name="vday_5" value="5" />
+                   <input id="vday_6" type="checkbox" name="vday_6" value="6" checked />
+                   <input id="vday_7" type="checkbox" name="vday_7" value="7" checked />
+               </div>
+
+               Blue: Actively accumulates every hour even if away from computer
+               Red: Only accumulates if you are at computer 
+               -->
+		</div>		
+		<div id="browsing_stats">
+             <h3 style="margin-top:10px;">Tasks Completed</h3>
+             <div class="tasks_completed_container" style='margin-top:10px;display:flex;'>
+                 <div class='tasks_completed_left' style='width:600px;margin-right:80px;'>
+                    <select id="tasks_completed_daterange" class='form-control input-lg' style='float:right;'>
+                        <option value='7days'>Last 7 Days</option>
+                        <option value='30days'>Last 30 Days</option>
+                    </select>
+                     <br>
+                     <div id="tasks_container_chart_container" style='width:600px'>
+                         <canvas id="tasks_completed_bar" width="600" height="280"></canvas>
+                     </div>
+                 </div>
+                 <div class='tasks_completed_right'>
+                 </div>                    
+             </div>
+             <div style="display:flex;margin-top:30px;">
+                <h3>Browsing Stats/Limits</h3>
+                <!--
+                <div style="margin-left:50px;">
+                    <input type="checkbox" id="r" class="slider" checked="checked">
+                    <label for="r"></label>
+                    <label id="browsing_stats_switchtext" for="r">On</label>
+                </div>
+                -->
+             </div>
+             <div style='display:none;' id='browsing_stats_disabled_message'>
+                 <p style="margin-top:30px;">
+                     You have browsing stats disabled.  If you want to turn them back on you can do it on the Manage Websites page.
+                 </p>
+             </div>
+             <div id="browsing_stats_container" class='browsing_stats_container' style='margin-top:10px;display:flex;'>
+                 <div class='browsing_stats_left' style='width:600px;margin-right:80px;'>
+                    <select id="browsing_stats_daterange" class='form-control input-lg' style='float:right;'>
+                        <option value='7days'>Last 7 Days</option>
+                        <option value='today'>Today</option>
+                        <option value='yesterday'>Yesterday</option>
+                    </select>
+                     <br>
+                     <div id="browsing_stats_chart_container" style='width:600px'>
+                         <canvas id="browsing_stats_pie" width="600" height="280"></canvas>
+                     </div>
+                     <div id='browsing_stats_table'></div>
+                 </div>
+                 <div class='browsing_stats_right'>
+                     <div class="browsing_limits_container">
+                         <div class="browsing_limits_entry">
+                             <div class="browsing_limits_domain">
+                                 Website:<br>
+                                 <input id="limit_domain_name" type="text" value="" />
+                             </div>
+                             <div class="browsing_limits_minutes">
+                                 Limit:<br>
+                                 <input id="limit_domain_minutes" type="text" value="" /><span>min</span>
+                             </div>
+                             <div class="browsing_limits_button">
+                                 <button id="limit_add_limit" class="prodowl-button">Set Limit</button>
+                             </div>
+                         </div>
+                         <div class="browsing_limits_list">
+                            <table id="browsing_limit_table">
+                                <thead>
+                                  <tr>
+                                    <th style="width: 60%;">Domain</th>
+                                    <th>Time Limit</th>
+                                    <th>Remove</th>
+                                  </tr>
+                                </thead>
+                                <tbody>
+                                </tbody>
+                            </table>                             
+                         </div>
+                     </div>                     
+                 </div>                 
+             </div>
+             <br><br><br><br><br><br><br><br>
+		</div>
+		<div id="earn_respect">
+			<h3 style='margin-top:10px;'>Earn the Owl's respect</h3>
+            <p style="margin-top:10px;">The best way to earn respect is to enter and complete tasks on the 
+                <a href="#" class="tasks_page_link">Tasks page</a>.
+            </p>            
+            <div style="width:600px;margin-top:20px;">
+                <div style="margin-left:auto;text-align:right;">
+                    <div id="vacationdisplay_container">
+                        <span class="vacationdisplay_label">Respect Score: &nbsp;</span>
+                        <input type="text" value="0" id="respectscore_topscore" disabled="disabled">                     
+                    </div>                 
+                </div>
+            </div>
+            <div style="position:relative;width:580px;">
+                <div class="respectmarker_container">
+                    <div style="position:relative;height:1px;">
+                        <div class="respectscore_red">
+                            0
+                        </div>
+                        <div class="respectscore_yourscore">
+                            Your Score
+                        </div>
+                    </div>
+                    <img src="img/respectscore_line.png" style="opacity:0.7" />
+                </div>
+            </div>
+            <div style="display:flex;margin-top:3px;margin-left:20px;">
+                <div class="respect_score_display">
+                    <div class="respect-container">
+                        <div class='respect-container-text respecttext-1'><span class='respect_label'>Low Respect</span>
+                            <span class="respect_description">The owl is skeptical of your commitment to being productive</span>
+                        </div>
+                        <div class='respect-container-image'><img id="respectimg_1" width="110" src="img/respectlevel_1.jpg"/></div>
+                        <div class='respect-container-text respecttext-2'>                            
+                            <span class='respect_label'>Mediocre Respect</span> 
+                            <span class="respect_description">The owl is watching closely because he thinks you may have potential</span>
+                        </div>
+                        <div class='respect-container-image'><img id="respectimg_2" width="110" src="img/unlock_respect3.jpg"/></div>
+                        <div class='respect-container-text respecttext-3'><span class='respect_label'>Moderate Respect</span>
+                            <span class="respect_description">Congratulations, the owl thinks you are being productive</span>                     
+                        </div>
+                        <div class='respect-container-image'><img id="respectimg_3" width="110" src="img/unlock_respect3.jpg"/></div>
+                        <div class='respect-container-text respecttext-4'><span class='respect_label'>High Respect</span>
+                            <span class="respect_description">Work/Life balance is overrated, you now have relentless focus.  All you care about is pleasing the owl</span>
+                        </div>
+                        <div class='respect-container-image'><img id="respectimg_4" width="110" src="img/unlock_respect3.jpg"/></div>
+                        <div class='respect-container-text respecttext-5'><span class='respect_label'>Ultimate Respect</span>
+                            <span class="respect_description">*******OWL SCREECHING NOISES*******</span>                        
+                        </div>                                               
+                        <div class='respect-container-image'><img id="respectimg_5" width="110" src="img/unlock_respect3.jpg"/></div>
+                    </div>
+                    <br><br><Br>
+                </div>
+                <div class="respect_side_panel">
+                    <div id="respectshare"></div>
+                    <br>
+                    <div id="container_no_pledge">
+                        <p>
+                            You can increase your respect score by 5 points if you make the pledge 
+                            to use the Productivity Owl as intended.
+                        </p>
+                        <div id="owl_pledge_container">
+                            <button id="make_owl_pledge" class="prodowl-button">Make Owl Pledge</button>                    
+                        </div>
+                    </div>
+                    <div id="container_respect_tips" style="display:none;">
+                        <p><span style="display:block;text-decoration:underline;">RESPECT TIP</span>
+                            <span id="respect_tips_text">
+                                
+                            </span>                            
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="owl_interventions">
+			<h3 style='margin-top:20px;'>Owl Interventions</h3>
+            <div style="display:flex;">
+                <div style="width: 700px;" id="intervention_left_container">
+                    <p style="margin-top:20px;">You completed <b><span id="intervention_done"></span>/<span id="intervention_total"></span></b> Interventions in the last 7 days </p>                    
+                    
+                    <p style="margin-top:20px;margin-top: 20px;font-family: 'Poppins';font-size: 15px;" id="no_interventions">
+                        There are currently no active interventions.  
+                        
+                        When an intervention is active it will also be displayed here.
+                    </p>            
+                    <div id="intervention_container">
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div id="import_export">
+			<br><h3>Save your Settings and Schedule</h3>
+			<br><br>
+			<h3>Export</h3><br>
+			<button class="export_import" id="owl_export_settings">Export Settings to a File</button>
+			<a id="export_link" download="productivity_owl_settings.txt" href="#"></a>
+			<br><br><br>
+			<h3>Import</h3><br>
+			Open the file you saved, copy and paste the text in the area below and hit import.<br>
+			<textarea id="import_settings_text" rows="15"></textarea><br style="clear:both"><br>
+			<button class="export_import" id="owl_import_settings">Import Settings</button>
+		</div>
+		
+			
+	</div>
+	
+	<script id="timepicker_template" type="text/x-mustache-template">
+			<div id="{{name}}" class="ui-helper-reset ui-timepickr ui-widget" style="left: 0; display: none; ">
+					<ol class="ui-timepickr-row ui-helper-clearfix hours" style="display: block; ">
+							<li class="ui-timepickr-button"><span class="timeBox">1</span></li>
+							<li class="ui-timepickr-button"><span class="timeBox">2</span></li>
+							<li class="ui-timepickr-button"><span class="timeBox">3</span></li>
+							<li class="ui-timepickr-button"><span class="timeBox">4</span></li>
+							<li class="ui-timepickr-button"><span class="timeBox">5</span></li>
+							<li class="ui-timepickr-button"><span class="timeBox">6</span></li>
+							<li class="ui-timepickr-button"><span class="timeBox">7</span></li>
+							<li class="ui-timepickr-button"><span class="timeBox">8</span></li>
+							<li class="ui-timepickr-button"><span class="timeBox">9</span></li>
+							<li class="ui-timepickr-button"><span class="timeBox">10</span></li>
+							<li class="ui-timepickr-button"><span class="timeBox">11</span></li>
+							<li class="ui-timepickr-button"><span class="timeBox">12</span></li>
+					</ol>
+					<ol class="ui-timepickr-row ui-helper-clearfix minutes" style="display: none; left: 226px; ">
+							<li class="ui-timepickr-button"><span class="timeBox">00</span></li>					
+							<li class="ui-timepickr-button"><span class="timeBox">15</span></li>
+							<li class="ui-timepickr-button"><span class="timeBox">30</span></li>
+							<li class="ui-timepickr-button"><span class="timeBox">45</span></li>						
+					</ol>
+					<ol class="ui-timepickr-row ui-helper-clearfix ampm" style="display: none; left: 310px; ">
+							<li class="ui-timepickr-button"><span class="timeBox">am</span></li>
+							<li class="ui-timepickr-button"><span class="timeBox">pm</span></li>
+					</ol>
+			</div>
+	</script>	
+  <div class="prodowl-modal prodowl-micromodal-slide" id="modal-1" aria-hidden="true">
+    <div class="prodowl-modal__overlay" tabindex="-1">
+      <div class="prodowl-modal__container" role="dialog" aria-modal="true" aria-labelledby="modal-1-title">
+        <header class="prodowl-modal__header">
+          <h2 class="prodowl-modal__title" id="modal-1-title">
+            Enter Subtasks
+          </h2>
+          <button class="prodowl-modal__close" aria-label="Close modal" data-micromodal-close></button>
+        </header>
+        <main class="prodowl-modal__content" id="modal-1-content">
+            <textarea id="prodowl-modal-subtasks"></textarea>  
+        </main>
+        <footer class="prodowl-modal__footer">
+          <button id="modal_add_subtask" class="prodowl-button">Add Subtask</button>
+        </footer>
+      </div>                
+    </div>
+  </div>  
+    
+  <div class="prodowl-modal prodowl-micromodal-slide" id="modal-make-the-pledge" aria-hidden="true">
+    <div class="prodowl-modal__overlay" tabindex="-1">
+      <div class="prodowl-modal__container" role="dialog">
+        <header class="prodowl-modal__header">
+          <h2 class="prodowl-modal__title" id="modal-1-title">
+            Make Owl Pledge
+          </h2>
+          <button class="prodowl-modal__close" aria-label="Close modal" data-micromodal-close></button>
+        </header>
+        <main class="prodowl-modal__content" id="modal-1-content" style="margin-top:10px;">
+            <!--
+
+            -->
+                <div class="extra_pledge">
+                <p style="font-size: 17px;">
+                    The first step to earn the owl's respect is to make a commitment.  You have to realize time-wasting
+                    websites will entertain you in the short-term, but will hurt your long-term happiness, stress levels, finances etc.
+                </p>
+                <p style="font-size: 17px;padding-top:10px;">                    
+                    By checking `I Agree` you commit to using the Productivity Owl 24/7.  
+                    You will not disable or un-install this extension, use your phone, or use a different browser when the Productivity Owl gets 
+                    annoying. All your free time will be scheduled or earned through the Productivity Owl. 
+                </p>
+                </div>
+                <span class="settings_desperation">
+                <input type="checkbox" id="owl_pledge_checkbox" /> <label class="iagree_label" for="owl_pledge_checkbox">I agree</label>
+                </span>
+                <div id="must_check_iagree" style="display:none;color:red;margin-top:8px;">
+                    You must check I agree to accept.
+                </div>
+
+        </main>
+        <footer class="prodowl-modal__footer">
+          <button id="modal_accept_pledge" class="prodowl-button">Accept</button>
+        </footer>
+      </div>                
+    </div>
+  </div>  
+    
+    
+  <div class="prodowl-modal prodowl-micromodal-slide" id="modal-owl-interception" aria-hidden="true">
+    <div class="prodowl-modal__overlay" tabindex="-1">
+        <div style="margin:0px auto;text-align:center;">
+            <img src="img/owl_spread_wingspan.png" /><br>
+            <span id="owl_interception_message" class="owl_interception_message">
+                I cannot let you do that!
+            </span>
+        </div>
+    </div>
+  </div>      
+
+    
+    
+  <div class="prodowl-modal prodowl-micromodal-slide" id="modal-edit-fulltask" aria-hidden="true">
+    <div class="prodowl-modal__overlay" tabindex="-1">
+      <div class="prodowl-modal__container" role="dialog" aria-modal="true" aria-labelledby="modal-1-title">
+        <header class="prodowl-modal__header">
+          <h2 class="prodowl-modal__title" id="modal-editfulltask-title">
+            Edit a Task (and its subtasks)
+          </h2>
+          <button class="prodowl-modal__close" aria-label="Close modal" data-micromodal-close></button>
+        </header>
+        <main class="prodowl-modal__content" id="modal-1-content">
+            <textarea id="prodowl-modal-tasks"></textarea>  
+        </main>
+        <footer class="prodowl-modal__footer">
+          <button id="modal_edit_task" class="prodowl-button">Edit Task</button>
+        </footer>
+      </div>                
+    </div>
+  </div>    
+    <div class="prodowl-modal prodowl-micromodal-slide" id="modal-more-projects" aria-hidden="true">
+    <div class="prodowl-modal__overlay" tabindex="-1">
+      <div class="prodowl-modal__container" role="dialog" aria-modal="true" aria-labelledby="modal-1-title">
+        <header class="prodowl-modal__header">
+          <h2 class="prodowl-modal__title" id="modal-1-title">
+              My Other Projects
+          </h2>
+          <button class="prodowl-modal__close" aria-label="Close modal" data-micromodal-close></button>
+        </header>
+        <main class="prodowl-modal__content" id="modal-1-content">
+                <article id="snipcss" class="row half-gutters project-item">
+                    <div class="col-xs-2">
+                        <div class="image-wrapper ">
+                            <img src="img/snip_kiwi_smallest.png" class="center-block img-responsive" alt="SnipCSS">
+                        </div>
+                    </div>
+                    <div class="col-xs-10 ">
+                        <h3 class='project-item-container' id='project_snipcss'>
+                            <a class="project-title" href="https://www.snipcss.com" 
+                               target="_blank">SnipCSS</a>
+                        </h3>
+                        <ul class="projectmore">
+                            <li>Extension for Web Devs</li>
+                            <li>|</li>
+                            <li>The Snip Kiwi pecks away at the CSS of any web element</li>
+                        </ul>
+                    </div>
+                </article>            
+                <article id="scrapehawk" class="row half-gutters project-item">
+                    <div class="col-xs-2">
+                        <div class="image-wrapper ">
+                            <img src="img/scrape_hawk_smallest.png" class="center-block img-responsive" alt="SnipCSS">
+                        </div>
+                    </div>
+                    <div class="col-xs-10 ">
+                        <h3 class='project-item-container' id='project_scrapehawk'>
+                            <a class="project-title" href="https://www.scrapehawk.com" 
+                               target="_blank">ScrapeHawk</a>
+                        </h3>
+                        <ul class="projectmore">
+                            <li>Extension for Data Extraction</li>
+                            <li>|</li>
+                            <li>The ScrapeHawk Swoops Down and Grabs Your Data</li>
+                        </ul>
+                    </div>
+                </article>   
+                <article id="" class="row half-gutters project-item">
+                    <div class="col-xs-2">
+                        <div class="image-wrapper ">
+                            <img src="img/superanimo_smallest.png" class="center-block img-responsive" alt="SnipCSS">
+                        </div>
+                    </div>
+                    <div class="col-xs-10 ">
+                        <h3 class='project-item-container' id='project_superanimo'>
+                            <a class="project-title" href="https://www.superanimo.com" 
+                               target="_blank">SuperAnimo</a>
+                        </h3>
+                        <ul class="projectmore">
+                            <li>Website to Create Animations</li>
+                            <li>|</li>
+                            <li>Make your own cartoons or meme mashups</li>
+                        </ul>
+                    </div>
+                </article>                
+        </main>          
+      </div>                
+    </div>        
+        
+
+    </div>  
+    
+    
+    <div class="github-ribbon">
+        <a href="https://github.com/mrieck/productivityowl"><img loading="lazy" width="149" height="149" 
+             src="img/cloneme_on_github.png" 
+             class="attachment-full size-full" 
+             alt="Clone me on GitHub">
+        </a>    
+    </div>
+    <div class="fontawesome-credit">
+        <a href="https://github.com/mrieck/productivityowl" id="opensource_link">Open Source</a>, Licensed under Apache 2.0 (All data for this extension is stored locally)<br>
+        Icons provided by <a href="https://fontawesome.com/">FontAwesome</a> under <a href="https://fontawesome.com/license/free">CC Attribution 4.0</a><br>
+        <a href='#' id='more_projects_link'>More Projects</a>
+    </div>
+    
+    <div class='other_projects_float' style='position:fixed;left:10px;bottom:10px;z-index:9999999;'>
+        
+    </div>
+    
+</body>
+</html>
