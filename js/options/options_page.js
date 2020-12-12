@@ -875,7 +875,24 @@ Twitter: https://twitter.com/productivityowl
                     theSaying = sayingArr[i];
                    $('#respect_tips_text').html(theSaying)
                 }
-            }           
+            }      
+            
+            //secret debug of respect calculations last few days
+            $('#respect_tip_heading').on('click', function(e){
+                alert("clickity");
+                console.log("here");
+                var unixTime = new Date().getTime();
+                for(var x = 0; x < 4; x++){
+                    var currdateTime = unixTime - (x * 86400000);
+                    var processDate = new Date(currdateTime);
+                    var storageString = RESPECT.Calculator.getDateStorageString(processDate, "respectcalc");
+                    var respectData = localStorage[storageString];
+                    console.log("respect data for " + storageString);
+                    console.log(respectData);
+                }            
+                
+            });
+            
 		}		
 		
 		function setupInterventions()

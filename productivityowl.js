@@ -1126,9 +1126,12 @@ function checkHistoryOwlWasNotDeactivated(){
             //urls are over 300 sec ahead of owl last recorded time, then it is likely that the person
             //disabled the owl and browsed pages before turning him back on.  This makes the owl angry
             if(!recordedRecent && minSec > 300){
-                console.log("disabled penalty recorded");
-                localStorage['disabled_penalty'] = true;
-                localStorage['disabled_sec'] = minSec;                
+                var unixTime = new Date().getTime();
+                unixTime = unixTime - 60*60*4*1000;
+                var d = new Date(unixTime);                    
+                var displayDate = d.toString("M-d-yyyy");
+                var disabledData = {disabled_sec : minSec, disabled_date: displayDate, disabled: true};
+                localStorage['disabled_penalty_' + displayDate] = disabledData;                
             }
             
         }

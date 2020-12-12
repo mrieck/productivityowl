@@ -53,12 +53,38 @@ RESPECT.Calculator = {
         newRespectScore = newRespectScore + taskChange;
         console.log("new score inter+tasks: ");
         console.log(newRespectScore);
+        
+        var disablePenalty = parseFloat(this.calculateDisablePenalty(dateObj));
+        newRespectScore = newRespectScore + disablePenalty;
+        console.log("disable penalty " + disablePenalty);
+        console.log("new score " + newRespectScore);
+        
         var processDate = dateObj.toString("M/d/yyyy");
+       
+        return {process_date: processDate, old_score: currentRespectScore, new_score: newRespectScore, task_change: taskChange, intervention_change: interventionChange, disable_penalty: disablePenalty};        
+    },
+    calculateDisablePenalty : function(dateObj){
+        var displayDate = dateObj.toString("M-d-yyyy");
+        var disabledEntry = localStorage['disabled_penalty_' + displayDate];           
+        if(!disabledEntry){
+            return 0.0
+        }
+        var secOff = parseInt(disabledEntry['minSec']);
+        if(secOff > 10000){
+            return -2.0;
+        }
+        else if(secOff > 5000){
+            return -1.0;
+        }
+        else if(secOff > 2000){
+            return -0.3;
+        }
+        else if(secOff > 300){
+            return -0.2;
+        }
         
-        //var disablePenalty = this.calculateDisablePenalty(dateObj, currentRespectScore);
         
-        return {process_date: processDate, old_score: currentRespectScore, new_score: newRespectScore, task_change: taskChange, intervention_change: interventionChange, disable_penalty: 0.0};
-        
+        return 0.0;
     },
     calculateInterventionChange : function(dateObj, currentRespectScore){
         

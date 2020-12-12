@@ -1,7 +1,7 @@
 {
   "manifest_version": 2,
   "name": "Productivity Owl",
-  "version": "2.0",
+  "version": "2.0.1",
   "description": "Want to be productive? Let the Productivity Owl guide you to accomplishment.",
   "icons": { "16": "img/owl_16x16.png",
            "48": "img/owl_48x48.png",
@@ -46,8 +46,6 @@
         "js/options/task_list.js",    	
         "js/options/interventions.js",                
 	    "js/block_logic.js",
-		"js/yahoo-dom-event.js",		
-		"js/yahoo-dragdrop-min.js",		
 		"js/mustache.js",
 	    "contentscript_owl.js"
 	  ]
