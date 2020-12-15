@@ -879,7 +879,6 @@ Twitter: https://twitter.com/productivityowl
             
             //secret debug of respect calculations last few days
             $('#respect_tip_heading').on('click', function(e){
-                alert("clickity");
                 console.log("here");
                 var unixTime = new Date().getTime();
                 for(var x = 0; x < 4; x++){

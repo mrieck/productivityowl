@@ -4,20 +4,20 @@ Copyright 2012-2020 Productive Mark LLC
 
 Productivity Owl - v2.0
 =============================================================================
-A lot of updates in this release
+Thanks to everyone who has used the owl over the last 8 years.  Version 1.X focused on making better web browsing habits.  Version 2 has a larger goal.
+I want the Productivity Owl to be a complete solution to increase productivity, stop procrastination, and motivate you to achieve your goals.
+
+I've made the extension open-source under the Apache 2.0 license so everyone can trust the owl.  Your data is never sent anywhere.  
+Everything is stored locally on your computer.   
+
+There are a lot of other updates in this release:
 - Tasks/Rewards system to earn break time (to take a break after completing tasks click the extension icon, then click take a break)
 - Owl Interventions (excercises to help motivate, and understand why you might be procrastinating)
 - Earning Owl's Respect is now possible... but unlikely 
 - Browsing Stats, and ability to set time limits on certain websites even if it's break time
-- Time Boxing, to help you declare what your schedule will be, if you set a time for work lockdown mode restricts removing block sites, adding allowed, and turns up the owl
+- Time Boxing, to help you declare what your schedule will be.  If you set a time for work the owl becomes slightly more strict and doesn't allow removing block sites, and a couple other things
 
-Productivity Owl - v1.3
-=============================================================================
-Bug Fixes
-
-Productivity Owl - v1.2
-=============================================================================
-Version 1.2 fixes some bugs, upgrades to Manifest 2... See notes for details  
+Productivity Owl - v1.0 - v1.3  (2012 - 2020)
 =============================================================================
 The Productivity Owl will eliminate your time wasting habits on the internet.  
 
@@ -32,16 +32,3 @@ Certain sites such as Facebook and Youtube should be set as "Blocked Websites" i
 You must plan all your breaks in advance with the "Freetime Scheduler." During "Freetime" the owl will not close your tabs.
 
 *** WARNING: This extension is very annoying.  The owl is constantly flying across your pages, annoying you, and closing your tabs.  If you are not serious about being productive, this extension may not be for you.***
-
-****************************************************************************************
-Version 1.1
-
-This version is still not a final release.  It just fixes some bugs and updates to Manifest 2.  
-
-Note: Anti-Desperation mode still doesn't work correctly.  The owl is supposed to catch on when you are "desperately"
-refreshing the page, or clicking links to reset the timer.  I plan to have him insult you, and close the tab in that scenario.
-
-Note on Release 1.1:
-Thanks to everyone who has been using the Productivity Owl. The first release was experimental, and I never thought to update the extension to fix old bugs 
-since there were only "20 current users."  Then suddenly there were 3000 users.  When I tried to update I ran into Google's Manifest Version 2 which 
-delayed the release further.  Thanks for being patient.

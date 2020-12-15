@@ -865,7 +865,7 @@ function respectCalc(){
             if(Math.abs(newScore - oldScore) < 3.0 && newScore > 0.0){
                 localStorage['respect_score'] = newScore;
             }
-            localStorage[storageString] = respectObject;
+            localStorage[storageString] = JSON.stringify(respectObject);
         }
 
     }        
