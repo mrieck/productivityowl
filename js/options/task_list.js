@@ -350,7 +350,7 @@ TASKS.buttonHandlers = function(){
         console.log("gibberish score");
         console.log(testGibberish);
         
-        if(diffSec > 180 && testGibberish < 67){
+        if(diffSec > 180){
             chrome.runtime.sendMessage({method: "addVacationTime", time: theMin, task_text: taskText, subtask: 'no', subtask_count: taskObject.subtasks.length},
             function(response)
             {
@@ -433,7 +433,7 @@ TASKS.buttonHandlers = function(){
         console.log("gibberish score");
         console.log(testGibberish);        
       
-        if(diffSec > 180 && testGibberish < 50){
+        if(diffSec > 180){
             chrome.runtime.sendMessage({method: "addVacationTime", time: theMin, task_text: taskText, subtask: 'yes'},
             function(response)
             {
