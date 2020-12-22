@@ -742,7 +742,8 @@ Twitter: https://twitter.com/productivityowl
 		}        
 		else if(request.method == "visitedAllowedPage")
 		{
-			//We need this to know to accrue vacation time when the alarm goes off 
+            //Not sure what this was used for before...
+            //But I think I'll use it to calculate some respect if visiting allowed page
 			var currDate = Date.today().setTimeToNow();
 			var currUrl = "";
 			if(request.url)
@@ -767,7 +768,6 @@ Twitter: https://twitter.com/productivityowl
 			console.log("allowed url visited count: " + allAllowedUrls.length);
 			localStorage['allowed_history'] = JSON.stringify(allAllowedUrls);
 		}
-
 		else if(request.method == "saveForLater")
 		{
 			var saveUrl = request.the_url;		

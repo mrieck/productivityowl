@@ -829,22 +829,15 @@ function owlHandleCurrentUrl(visitedCount)
 	}
 	else if(operation == 2 && OWL.STATE != 2)  //Free Pass
 	{
-		//Close after X Minutes if not given focus 
-        //(disabled)
-       /*
-		if(BlockLogic.inactiveCloseTime > 0)
-		{
-			var closeAfterThis = BlockLogic.inactiveCloseTime * 60 * 1000;  //IN MINUTES, convert to milli
-			OWL.INACTIVE_TIMER = setTimeout("owlInactiveTick()", closeAfterThis);
-		}
-        */
-       
+        //decided to remove allowed overlay
+        //no point in having it
+        /*
         var imageEmptyTree = chrome.extension.getURL('img/no_owl_in_tree_small.png');
 
         loadMustacheTemplate('templates/owl_allowed_overlay.html', 'body',
         {img_empty_tree : imageEmptyTree}, afterAllowedPageLoads
         );    
-
+        */
 		chrome.extension.sendRequest({method: "visitedAllowedPage", url: window.location.href},
 		function(response)
 		{

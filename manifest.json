@@ -1,7 +1,7 @@
 {
   "manifest_version": 2,
   "name": "Productivity Owl",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "description": "Want to be productive? Let the Productivity Owl guide you to accomplishment.",
   "icons": { "16": "img/owl_16x16.png",
            "48": "img/owl_48x48.png",
