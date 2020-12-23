@@ -341,7 +341,7 @@ var afterBlockCallback = function()
 	//console.log("Test2");
 	//var movingOwl = new YAHOO.util.DD("owl_image");
     //console.log("after block callback");
-    var movingOwl = new PlainDraggable(document.getElementById('owl_image'),{leftTop: true, containment : {left: -1000, top: -1000, width: 10000, height: 10000}});    
+    var movingOwl = new PlainDraggable(document.getElementById('owl_image'),{leftTop: true, containment : {left: -1000, top: -1000, width: 10000, height: 999000}});    
 	var imgTree = chrome.extension.getURL('img/a_tree_cut.png');
 	$('#owl_container').css('background-image', 'url(' + imgTree + ')');
 
@@ -606,7 +606,7 @@ OWL.afterInterventionLoaded = function(){
 	  $(this).css("cursor","pointer");
 	});    
     
-    OWL.DRAGGABLE_OWL = new PlainDraggable(document.getElementById('owl_image'),{leftTop: true, containment : {left: -1000, top: -1000, width: 10000, height: 10000}});    
+    OWL.DRAGGABLE_OWL = new PlainDraggable(document.getElementById('owl_image'),{leftTop: true, containment : {left: -1000, top: -1000, width: 10000, height: 999000}});    
     
     OWL.DRAGGABLE_OWL.onDragEnd = function(pos){
         //console.log("END DRAG position");
@@ -1227,7 +1227,7 @@ function owlClockTick()
 
 		//Do the OWL ANIMATION
 		//OWL.MOVING_OWL = new YAHOO.util.DDProxy("moving_owl");
-        OWL.MOVING_OWL = new PlainDraggable(document.getElementById('moving_owl'), {leftTop: true, containment : {left: -1000, top: -1000, width: 10000, height: 10000}});    
+        OWL.MOVING_OWL = new PlainDraggable(document.getElementById('moving_owl'), {leftTop: true, containment : {left: -1000, top: -1000, width: 10000, height: 999000}});    
         
 
 
