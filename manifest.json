@@ -1,7 +1,7 @@
 {
   "manifest_version": 2,
   "name": "Productivity Owl",
-  "version": "2.0.2",
+  "version": "2.0.3",
   "description": "Want to be productive? Let the Productivity Owl guide you to accomplishment.",
   "icons": { "16": "img/owl_16x16.png",
            "48": "img/owl_48x48.png",
@@ -25,6 +25,9 @@
 	"alarms"
   ],
   "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'",  
+  "externally_connectable": {
+     "matches": ["*://*.productivityowl.com/*"]
+  },      
   "content_scripts": [
     {
       "matches": ["<all_urls>"],

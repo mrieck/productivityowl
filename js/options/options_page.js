@@ -17,6 +17,17 @@ Twitter: https://twitter.com/productivityowl
     OPTIONS.STATS_ENABLED = true;
     OPTIONS.SNIPCSS_LINK = 'https://www.snipcss.com';
     OPTIONS.SCRAPEHAWK_LINK = 'https://www.scrapehawk.com';
+    OPTIONS.API_URL = "http://local.productivityowl.com/api/";
+    
+    OPTIONS.BITBUCKET_REWARD_COMMIT = 5;
+    OPTIONS.BITBUCKET_REWARD_ADDLINES = 50;
+    OPTIONS.BITBUCKET_REWARD_ADDAMOUNT = 5;
+    OPTIONS.BITBUCKET_REWARD_REMOVELINES = 200;
+    OPTIONS.BITBUCKET_REWARD_REMOVEAMOUNT = 1;    
+    OPTIONS.BITBUCKET_REWARD_MAX = 45;
+    
+    OPTIONS.BITBUCKET_REWARD_COMMIT = 5;
+    
 	
 	$(function()
 	{	             
@@ -675,6 +686,96 @@ Twitter: https://twitter.com/productivityowl
                 localStorage['tasks'] = JSON.stringify(arrData[5]);
 				location.reload(true);	                
 			}); 			
+            
+            $('#bitbucket_earn').on('click', function(){
+                var userEmail = localStorage['user_email'];
+                var userDatabaseConnected = localStorage['database_connected'];            
+                var userToken = localStorage['extension_token'];
+                console.log("adding userEmail:");
+                console.log(userEmail);
+                
+                var userData = {};
+                userData['user_email'] = 'markrieck81@gmail.com';
+                userData['extension_token'] = 'xxxxx';
+
+
+                var theJSON = JSON.stringify(userData);
+
+                var xhr = new XMLHttpRequest();
+
+                xhr.onreadystatechange = function() {
+                  if (xhr.readyState === 4) {
+                     console.log("got back response");
+                     console.log(xhr.responseText);
+                     var jsonData = JSON.parse(xhr.responseText);
+                     var allRewards = jsonData['new_rewards'];
+                     console.log(allRewards);
+                     for(var x = 0; x < allRewards.length; x++){
+                         var aReward = allRewards[x];
+                         var rewardId = aReward['id'];
+                         var linesAdded = parseInt(aReward['lines_added']);
+                         var linesRemoved = parseInt(aReward['lines_removed']);
+                         var repoSlug = aReward['repo_slug'];
+                         
+    //OPTIONS.BITBUCKET_REWARD_ADDLINES = 50;
+    //OPTIONS.BITBUCKET_REWARD_ADDAMOUNT = 5;
+    //OPTIONS.BITBUCKET_REWARD_REMOVELINES = 100;
+    //OPTIONS.BITBUCKET_REWARD_REMOVEAMOUNT = 1;    
+    //OPTIONS.BITBUCKET_REWARD_MAX = 60;                         
+                         console.log("lines added ");
+                         console.log(linesAdded);
+                         console.log("Lines removed");
+                         console.log(linesRemoved);
+                         var rewardTotal = OPTIONS.BITBUCKET_REWARD_COMMIT;
+                         var addAmount = Math.floor(linesAdded / OPTIONS.BITBUCKET_REWARD_ADDLINES) * OPTIONS.BITBUCKET_REWARD_ADDAMOUNT; 
+                         var removeAmount = Math.floor(linesRemoved / OPTIONS.BITBUCKET_REWARD_REMOVELINES) * OPTIONS.BITBUCKET_REWARD_REMOVEAMOUNT;
+                         console.log("extra from added lines " + addAmount);
+                         console.log("extra from removed lines " + removeAmount);
+                         
+                         rewardTotal += addAmount + removeAmount;
+                         if(rewardTotal > OPTIONS.BITBUCKET_REWARD_MAX){
+                             rewardTotal = OPTIONS.BITBUCKET_REWARD_MAX;
+                         }
+                         
+                        var taskText = "Bitbucket Commit on repo " + repoSlug + " (+" + linesAdded + ",-" + linesRemoved + "), Reward: " + rewardTotal + " min";
+                        console.log(taskText);
+                        /*
+                        chrome.runtime.sendMessage({method: "addVacationTime", time: rewardTotal, task_text: taskText, subtask: 'no', subtask_count: 0},
+                        function(response)
+                        {
+                            console.log("response task addVacationTime: ");
+                            console.log(response);
+                            CURRENT_VACATION_TIME = response['data'];
+                            $('#vacationtime_knob').val(CURRENT_VACATION_TIME);
+                        });                            
+                         */
+                         
+                         var processedData = {};
+                         processedData['user_token'] = 'xxxxx';
+                         processedData['reward_id'] = rewardId;
+                         var processedJSON = JSON.stringify(processedData);
+                         
+                         console.log("processed data");
+                         console.log(processedData);                       
+                         var xhrProcessed = new XMLHttpRequest();
+
+                         xhrProcessed.onreadystatechange = function() {                         
+                            if (xhrProcessed.readyState === 4) {
+                                console.log("confirm response back222");
+                                console.log(xhrProcessed.responseText);                                                                
+                            }
+                         };
+                         xhrProcessed.open("POST", OPTIONS.API_URL + 'confirm_bitbucket_reward', true);
+                         xhrProcessed.setRequestHeader('Content-Type', 'application/json');
+                         xhrProcessed.send(processedJSON); 
+                         
+                     }
+                  }
+                };    
+                xhr.open("POST", OPTIONS.API_URL + 'earn_bitbucket_rewards', true);
+                xhr.setRequestHeader('Content-Type', 'application/json');
+                xhr.send(theJSON);                    
+            });
 
 			initExportData();
 		}

@@ -348,6 +348,11 @@
                         <button class="add_new_task" id="add_new_task">Add New Task</button>
                     </div>
                     <div class="task_options_container">
+                        <span style="padding-bottom: 3px;display: inline-block;" class="vacationdisplay_label">Switch Task List:</span><br>
+                        <select id="tasklist_dropdown" class="form-control input-lg" style="float:right;">
+                            <option value="default">Default</option>
+                            <option value="addnew">Add New Task List</option>
+                        </select>                                                
                     </div>
                 </div>
                 
@@ -596,6 +601,13 @@
         <div id="import_export">
 			<br><h3>Save your Settings and Schedule</h3>
 			<br><br>
+            <h3>Integrations</h3>
+            <button id="bitbucket_sync" class="prodowl-button">BitBucket Sync</button>
+            <br><br>
+            <button id="bitbucket_earn" class="prodowl-button">BitBucket Earn</button>   
+            <br><br>
+            
+            
 			<h3>Export</h3><br>
 			<button class="export_import" id="owl_export_settings">Export Settings to a File</button>
 			<a id="export_link" download="productivity_owl_settings.txt" href="#"></a>

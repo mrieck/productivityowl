@@ -13,10 +13,13 @@
 }
 
 #prodowl-tasks_rewards .task_options_container{
-    margin-left:auto;
-    text-align:right;
+    margin-left: auto;
+    text-align: right;
+    margin-bottom: 20px;
 }
 
+
+    
 #prodowl-tasks_rewards .addnewtask_container button{
     margin-left: 20px;
 }
@@ -478,6 +481,16 @@
   top:50%;
   margin-left:8px;
   transform: translateX(0%)   translateY(-50%);
+}
+
+
+#prodowl-tasks_rewards select#tasklist_dropdown{    
+    float: right;
+    width: 200px;
+    padding: 0px;
+    line-height: 20px;
+    height: 30px;
+    min-width: 200px;
 }
 
 #prodowl-tasks_rewards [tooltip]:hover::after,[tooltip]:hover::before {

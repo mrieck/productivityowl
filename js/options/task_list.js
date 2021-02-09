@@ -350,7 +350,7 @@ TASKS.buttonHandlers = function(){
         console.log("gibberish score");
         console.log(testGibberish);
         
-        if(diffSec > 180 && testGibberish < 75){
+        if(diffSec > 180){
             chrome.runtime.sendMessage({method: "addVacationTime", time: theMin, task_text: taskText, subtask: 'no', subtask_count: taskObject.subtasks.length},
             function(response)
             {
@@ -433,7 +433,7 @@ TASKS.buttonHandlers = function(){
         console.log("gibberish score");
         console.log(testGibberish);        
       
-        if(diffSec > 180 && testGibberish < 75){
+        if(diffSec > 180){
             chrome.runtime.sendMessage({method: "addVacationTime", time: theMin, task_text: taskText, subtask: 'yes'},
             function(response)
             {
@@ -486,7 +486,11 @@ TASKS.buttonHandlers = function(){
        TASKS.DEFAULT_TASK_FREETIME = newVal;
    });
    
-      
+   $('#tasklist_dropdown').on('change', function(){
+       var newVal = $(this).val();
+       
+       alert("")
+   });
     
 };
 
@@ -550,7 +554,7 @@ TASKS.Items = {
         var me = this;
         $('#tasklist').css('min-height', $('#tasklist').height() + "px");
         $('#tasklist').empty();
-        var params = {method: "get_tasks"};
+        var params = {method: "get_tasks", task_list: TASKS.CURRENT_TASKLIST};
         chrome.runtime.sendMessage(params, function(response){                            
             //var savedTasks = localStorage['tasks'];
             var savedTasks = response['data'];            
