@@ -118,26 +118,26 @@ RESPECT.Calculator = {
         console.log("expired " + intMissed);
         
         
-        var neededRatio = 0.4 + Math.floor(Math.random() * 5) / 10;
+        var neededRatio = 0.4;
         console.log("needed ratio");
         console.log(neededRatio);
         if(intMissed > 0 && ((intCompleted / intTotal) < neededRatio)){
             if(currentRespectScore > 80.0){
-                return -0.2;
+                return -0.02;
             }            
             else if(currentRespectScore > 50.0){
-                return -0.1;
+                return -0.01;
             }
             else{
-                return -0.05;
+                return -0.0;
             }            
         }else if(intMissed == 0 && intCompleted > 2){
             //sure give a little respect
             if(currentRespectScore < 50.0){
-                return 0.03;
+                return 0.3;
             }
             else{
-                return 0.01;
+                return 0.1;
             }                      
         }
         
@@ -150,18 +150,18 @@ RESPECT.Calculator = {
         var processDateStorage = this.getDateStorageString(dateObj, "taskcomplete");
         console.log("prcess date storage " + processDateStorage);
         
-        var maxTaskRespectEarned = 0.8;        
+        var maxTaskRespectEarned = 1.8;        
         if(currentRespectScore > 20.0){
-            maxTaskRespectEarned = 0.6;
+            maxTaskRespectEarned = 1.6;
         }
         if(currentRespectScore > 40.0){
-            maxTaskRespectEarned = 0.4;
+            maxTaskRespectEarned = 1.4;
         }
         if(currentRespectScore > 60.0){
-            maxTaskRespectEarned = 0.3;
+            maxTaskRespectEarned = 1.0;
         }
         if(currentRespectScore > 80.0){
-            maxTaskRespectEarned = 0.2;
+            maxTaskRespectEarned = 0.5;
         }             
        var unixTime = new Date().getTime();
         var dayArr = new Array();
@@ -199,7 +199,7 @@ RESPECT.Calculator = {
             else if(foundDate && foundDateMod == (x % 7)){
                 //look back 7 days, 14 days... compare task completion rate to those
                 var oldTaskCount = getTasksCompleted(storageString);             
-                oldTaskTotal += 500;
+                oldTaskTotal += oldTaskCount;
                 oldTaskNum++;
                 console.log("old task num " + oldTaskNum + " amount " + oldTaskTotal);
                 
@@ -221,7 +221,7 @@ RESPECT.Calculator = {
         
         if(avgCount > 0 && dateTaskCount == 0){
             //not good to do no tasks
-            return -0.3;
+            return -0.001;
         }else if(dateTaskCount == 0){
             return 0.0;
         }
@@ -241,13 +241,13 @@ RESPECT.Calculator = {
                 return maxTaskRespectEarned * 0.2;
             }
             else if(ratio > 0.5){                
-                return -0.05;
+                return -0.005;
             }
             else if(ratio > 0.2){ 
-                return -0.1;
+                return -0.001;
             }
             else if(ratio > 0.0){                
-                return -0.2;
+                return -0.002;
             }            
         }
         else if(dateTaskCount > 0.0){
