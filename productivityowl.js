@@ -371,7 +371,12 @@ Twitter: https://twitter.com/productivityowl
 			
 				
 			sendResponse({data: response, freetime_type: freeTimeType, visited_count: visitedCount, sec_left: secLeft, vacation_time: vacationTimeLeft}); 					
-		}        
+		}       
+		else if(request.method == "resetVacationTime")
+		{
+            localStorage['vacation_time'] = 0;
+            sendResponse({data: 0}); 	
+        }        
 		else if(request.method == "addVacationTime")
 		{
 			var vacationTime = localStorage['vacation_time'];	

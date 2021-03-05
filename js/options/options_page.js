@@ -20,13 +20,14 @@ Twitter: https://twitter.com/productivityowl
     OPTIONS.API_URL = "http://local.productivityowl.com/api/";
     
     OPTIONS.BITBUCKET_REWARD_COMMIT = 5;
-    OPTIONS.BITBUCKET_REWARD_ADDLINES = 50;
+    OPTIONS.BITBUCKET_REWARD_ADDLINES = 100;
     OPTIONS.BITBUCKET_REWARD_ADDAMOUNT = 5;
-    OPTIONS.BITBUCKET_REWARD_REMOVELINES = 200;
+    OPTIONS.BITBUCKET_REWARD_REMOVELINES = 400;
     OPTIONS.BITBUCKET_REWARD_REMOVEAMOUNT = 1;    
-    OPTIONS.BITBUCKET_REWARD_MAX = 45;
+    OPTIONS.BITBUCKET_REWARD_MAX = 30;
     
     OPTIONS.BITBUCKET_REWARD_COMMIT = 5;
+    OPTIONS.PRODUCTION = true;
     
 	
 	$(function()
@@ -276,6 +277,16 @@ Twitter: https://twitter.com/productivityowl
                 if(selectedTab.length > 4){
                     $('#li_' + selectedTab).trigger('click');
                 }
+                
+                //secret method to reset vacation time
+                if(tabSplit[1] == 'resetvacation'){
+                    chrome.runtime.sendMessage({method: "resetVacationTime"},
+                    function(response)
+                    {
+                        console.log("vacation time reset");
+                    });                      
+                }
+                
             }else{
                 var lastNav = localStorage['last_nav'];
                 
@@ -298,7 +309,8 @@ Twitter: https://twitter.com/productivityowl
             });            
         });        
 
-
+        
+        
 		
 	});
 	
@@ -686,10 +698,9 @@ Twitter: https://twitter.com/productivityowl
                 localStorage['tasks'] = JSON.stringify(arrData[5]);
 				location.reload(true);	                
 			}); 			
-            
+            /*
             $('#bitbucket_earn').on('click', function(){
-                var userEmail = localStorage['user_email'];
-                var userDatabaseConnected = localStorage['database_connected'];            
+                var userEmail = localStorage['user_email'];        
                 var userToken = localStorage['extension_token'];
                 console.log("adding userEmail:");
                 console.log(userEmail);
@@ -716,12 +727,7 @@ Twitter: https://twitter.com/productivityowl
                          var linesAdded = parseInt(aReward['lines_added']);
                          var linesRemoved = parseInt(aReward['lines_removed']);
                          var repoSlug = aReward['repo_slug'];
-                         
-    //OPTIONS.BITBUCKET_REWARD_ADDLINES = 50;
-    //OPTIONS.BITBUCKET_REWARD_ADDAMOUNT = 5;
-    //OPTIONS.BITBUCKET_REWARD_REMOVELINES = 100;
-    //OPTIONS.BITBUCKET_REWARD_REMOVEAMOUNT = 1;    
-    //OPTIONS.BITBUCKET_REWARD_MAX = 60;                         
+                                         
                          console.log("lines added ");
                          console.log(linesAdded);
                          console.log("Lines removed");
@@ -739,7 +745,6 @@ Twitter: https://twitter.com/productivityowl
                          
                         var taskText = "Bitbucket Commit on repo " + repoSlug + " (+" + linesAdded + ",-" + linesRemoved + "), Reward: " + rewardTotal + " min";
                         console.log(taskText);
-                        /*
                         chrome.runtime.sendMessage({method: "addVacationTime", time: rewardTotal, task_text: taskText, subtask: 'no', subtask_count: 0},
                         function(response)
                         {
@@ -748,7 +753,6 @@ Twitter: https://twitter.com/productivityowl
                             CURRENT_VACATION_TIME = response['data'];
                             $('#vacationtime_knob').val(CURRENT_VACATION_TIME);
                         });                            
-                         */
                          
                          var processedData = {};
                          processedData['user_token'] = 'xxxxx';
@@ -776,7 +780,8 @@ Twitter: https://twitter.com/productivityowl
                 xhr.setRequestHeader('Content-Type', 'application/json');
                 xhr.send(theJSON);                    
             });
-
+            */
+           
 			initExportData();
 		}
 		
