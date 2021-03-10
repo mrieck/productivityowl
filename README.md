@@ -2,6 +2,10 @@ Licensed under the Apache v2.0 License
 https://www.productivityowl.com
 Copyright 2012-2020 Productive Mark LLC
 
+
+Productivity Owl - v2.0.3
+- There was a respect calculation problem.  Also working on integrations, multiple task lists, but they are not ready yet
+
 Productivity Owl - v2.0
 =============================================================================
 Thanks to everyone who has used the owl over the last 8 years.  Version 1.X focused on making better web browsing habits.  Version 2 has a larger goal.
